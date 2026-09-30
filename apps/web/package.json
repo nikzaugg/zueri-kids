@@ -3,10 +3,10 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "astro dev",
-    "build": "astro build && workbox generateSW workbox-config.cjs",
-    "preview": "astro preview --host",
-    "check": "astro check",
+    "dev": "ASTRO_TELEMETRY_DISABLED=1 astro dev",
+    "build": "ASTRO_TELEMETRY_DISABLED=1 astro build && workbox generateSW workbox-config.cjs",
+    "preview": "ASTRO_TELEMETRY_DISABLED=1 astro preview --host",
+    "check": "ASTRO_TELEMETRY_DISABLED=1 astro check",
     "icons": "pwa-assets-generator --preset minimal-2023 public/icon.svg",
     "e2e": "playwright test"
   },
