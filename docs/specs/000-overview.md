@@ -93,4 +93,6 @@ apps/web/          Astro web app
 ## Out of scope for v1
 
 Map view, user accounts, favourites, notifications, multiple children,
-languages other than German in the UI, venues outside the canton of Zurich.
+languages other than German in the UI, venues outside the canton of Zurich,
+offers in languages other than German/English (idea for publishing: an
+offer `language` field with a language filter).

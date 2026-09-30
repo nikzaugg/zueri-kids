@@ -151,3 +151,149 @@ offers:
     url: https://gz-zh.ch/gz-heuried/angebote/familienberatung/
     notes: "Walk-in or with appointment (online booking via Stadt Zürich). Familienberatung tel. 044 412 76 00."
     source: { url: "https://gz-zh.ch/gz-heuried/angebote/familienberatung/", lastVerified: 2026-09-30, by: ai }
+
+  - id: rollender-montag
+    title: Rollender Montag
+    description: >-
+      Freies Spiel mit Rollgeräten im Atrium für bewegungsfreudige Kinder.
+      Nicht betreut – Eltern sind verantwortlich.
+    category: play
+    ageMonths: { min: 0, max: 72 }
+    setting: indoor
+    price: { type: free }
+    registration: none
+    schedule:
+      type: openingHours
+      rules:
+        - { days: [mon], start: "14:30", end: "17:00" }
+      pausesDuringSchoolHolidays: true
+      pausesOnPublicHolidays: true
+    url: https://gz-zh.ch/gz-heuried/angebote/rollender-montag/
+    source: { url: "https://gz-zh.ch/gz-heuried/angebote/rollender-montag/", lastVerified: 2026-09-30, by: ai }
+
+  - id: begleiteter-bewegungsraum
+    title: Begleiteter Bewegungsraum
+    description: >-
+      Krabbeln, klettern und entdecken für die Kleinsten; Eltern vernetzen
+      sich. Angebot der Familienberatung der Stadt Zürich.
+    category: movement
+    ageMonths: { min: 5, max: 20 }
+    setting: indoor
+    price: { type: free }
+    registration: required
+    schedule:
+      type: weekly
+      rules:
+        - { days: [tue], start: "09:00", end: "12:00" }
+      pausesDuringSchoolHolidays: false
+      pausesOnPublicHolidays: true
+    url: https://gz-zh.ch/gz-heuried/angebote/begleiteter-bewegungsraum-2/
+    notes: Online registration on the Familienberatung website. Also runs during school holidays (dates listed).
+    source: { url: "https://gz-zh.ch/gz-heuried/angebote/begleiteter-bewegungsraum-2/", lastVerified: 2026-09-30, by: ai }
+
+  - id: tueftelatelier-kleinkinder
+    title: Tüftelatelier für Kleinkinder
+    description: >-
+      Staunen, erkunden und experimentieren mit vielfältigen Materialien und
+      Werkzeugen, mit einer erwachsenen Begleitperson.
+    category: crafts
+    ageMonths: { min: 30, max: 48 }
+    setting: indoor
+    price: { type: fixed, chf: 5, note: "mit Kulturlegi 50%" }
+    registration: none
+    schedule:
+      type: weekly
+      rules:
+        - { days: [mon], start: "09:30", end: "11:30" }
+      validFrom: 2026-10-19
+      validUntil: 2026-11-16
+      pausesDuringSchoolHolidays: true
+      pausesOnPublicHolidays: true
+    url: https://gz-zh.ch/gz-heuried/angebote/tueftelatelier-fuer-kleinkinder/
+    source: { url: "https://gz-zh.ch/gz-heuried/angebote/tueftelatelier-fuer-kleinkinder/", lastVerified: 2026-09-30, by: ai }
+
+  - id: offenes-werkatelier
+    title: Offenes Werkatelier
+    description: >-
+      Kreativwerkstatt mit Speckstein, Holz, Stoff, Gips, Farben, Ton u.v.m.
+      Offen für alle, Kinder unter 6 Jahren in Begleitung.
+    category: crafts
+    ageMonths: {}
+    setting: indoor
+    price: { type: range, minChf: 2, maxChf: 7, note: Materialkosten }
+    registration: none
+    schedule:
+      type: openingHours
+      rules:
+        - { days: [tue, wed, thu], start: "14:30", end: "17:30" }
+      pausesDuringSchoolHolidays: true
+      pausesOnPublicHolidays: true
+    url: https://gz-zh.ch/gz-heuried/angebote/offenes-werkatelier/
+    source: { url: "https://gz-zh.ch/gz-heuried/angebote/offenes-werkatelier/", lastVerified: 2026-09-30, by: ai }
+
+  - id: kindertanzen-vor-kiga-dienstag
+    title: Kindertanzen VorKiga & 1. Kiga (Dienstag)
+    description: Moderner Kindertanz, spielerisch mit Bildern, Versen und Geschichten.
+    category: movement
+    ageMonths: { min: 36 }
+    setting: indoor
+    price: { type: fixed, chf: 18, note: "pro Lektion, Anmeldung semesterweise; Schnupperlektion CHF 10" }
+    registration: required
+    schedule:
+      type: weekly
+      rules:
+        - { days: [tue], start: "14:30", end: "15:20" }
+      pausesDuringSchoolHolidays: true
+      pausesOnPublicHolidays: true
+    url: https://gz-zh.ch/gz-heuried/angebote/kindertanz-vorkiga-ab-3-jahre/
+    notes: "Registration with Etienne Beck, tel. 078 751 54 94."
+    source: { url: "https://gz-zh.ch/gz-heuried/angebote/kindertanz-vorkiga-ab-3-jahre/", lastVerified: 2026-09-30, by: ai }
+
+  - id: kinder-yoga
+    title: Kinder Yoga (mit Elternteil)
+    description: >-
+      Kinder entdecken gemeinsam mit einem Elternteil spielerisch Yoga –
+      Bewegung, Achtsamkeit und Nähe. Kursreihe mit 4 Terminen.
+    category: movement
+    ageMonths: { min: 36, max: 60 }
+    setting: indoor
+    price: { type: fixed, chf: 115, note: Kurs mit 4 Terminen }
+    registration: required
+    schedule:
+      type: dates
+      dates:
+        - { date: 2026-11-02, start: "15:30", end: "16:30" }
+        - { date: 2026-11-09, start: "15:30", end: "16:30" }
+        - { date: 2026-11-16, start: "15:30", end: "16:30" }
+        - { date: 2026-11-23, start: "15:30", end: "16:30" }
+    url: https://gz-zh.ch/gz-heuried/angebote/kinder-yoga/
+    source: { url: "https://gz-zh.ch/gz-heuried/angebote/kinder-yoga/", lastVerified: 2026-09-30, by: ai }
+
+  - id: spielwagen-kollerwiese
+    title: Spielwagen Kollerwiese
+    description: >-
+      Spielangebote im Freien für Familien mit Vorschulkindern, andere
+      Familien aus dem Quartier kennenlernen. Bei jedem Wetter.
+    category: play
+    ageMonths: { max: 72 }
+    setting: outdoor
+    price: { type: free }
+    registration: none
+    schedule:
+      type: dates
+      dates:
+        - { date: 2026-10-02, start: "15:00", end: "19:00" }
+        - { date: 2026-10-09, start: "14:00", end: "18:00" }
+        - { date: 2026-10-16, start: "14:00", end: "18:00" }
+        - { date: 2026-10-23, start: "14:00", end: "18:00" }
+        - { date: 2026-10-30, start: "14:00", end: "18:00" }
+        - { date: 2026-11-06, start: "14:00", end: "18:00" }
+        - { date: 2026-11-13, start: "14:00", end: "18:00" }
+        - { date: 2026-11-20, start: "14:00", end: "18:00" }
+        - { date: 2026-11-27, start: "14:00", end: "18:00" }
+        - { date: 2026-12-04, start: "14:00", end: "18:00" }
+        - { date: 2026-12-11, start: "14:00", end: "18:00" }
+        - { date: 2026-12-18, start: "14:00", end: "18:00" }
+    url: https://gz-zh.ch/gz-heuried/angebote/spielwagen-auf-der-kollerwiese/
+    notes: At the Spielwagen on the Kollerwiese (outside the GZ building). Summer hours 15–19, winter 14–18.
+    source: { url: "https://gz-zh.ch/gz-heuried/angebote/spielwagen-auf-der-kollerwiese/", lastVerified: 2026-09-30, by: ai }

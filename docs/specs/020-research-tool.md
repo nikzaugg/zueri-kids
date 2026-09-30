@@ -63,8 +63,11 @@ All command behaviour is verified by manual review of the resulting diff.
 - **REQ-RES-006:** Fetches are targeted (specific pages), no bulk crawling;
   at most ~30 page fetches per run unless the user asks for more. (manual)
 - **REQ-RES-007:** Only offers for children in at least part of the 0–4 age
-  range, or for their parents (e.g. family counselling), are recorded.
-  (manual)
+  range, or for parents who can bring their child (e.g. walk-in family
+  counselling), are recorded. Parent-only courses (e.g. evening parenting
+  courses) are not recorded. (manual)
+- **REQ-RES-009:** Only offers held in German or English (or without spoken
+  language, e.g. free play) are recorded. (manual)
 - **REQ-RES-008:** Offers that ended (past `validUntil` or all `dates` in the
   past) are removed; removal is listed in the summary. (manual)
 

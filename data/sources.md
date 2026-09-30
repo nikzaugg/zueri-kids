@@ -13,8 +13,12 @@ Research hints:
   parking → `amenities.stroller: yes` (user knowledge, 2026-09-30).
 - Changing table: probably available in all GZ but not confirmed → keep
   `unknown` unless the GZ page says so.
-- Program pages (`/<gz>/programm/`) list only the next few days; offer
-  detail pages are `/<gz>/angebote/<slug>/`.
+- Complete offer list: `https://gz-zh.ch/<gz>/angebote-sitemap.xml` (also
+  contains past offers – keep only pages with upcoming dates). Program pages
+  (`/<gz>/programm/`) list only the next few days. Offer detail pages are
+  `/<gz>/angebote/<slug>/`.
+- Some GZ have a second location (e.g. GZ Heuried – Standort Manesse,
+  Staffelstrasse 5) → separate venue file.
 - The city's Familienberatung is held in several GZ (category `advice`).
 
 Affoltern, Bachwiesen, Buchegg, Grünau, Heuried, Hirzenbach, Höngg,
