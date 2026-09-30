@@ -10,7 +10,7 @@ import { CardsView } from "./CardsView";
 import { FilterBar } from "./FilterBar";
 import { useBundle, useNow, usePrefs, useUrlState } from "./hooks";
 import { ListView } from "./ListView";
-import { TimelineView } from "./TimelineView";
+import { Axis, TimelineView } from "./TimelineView";
 import type { ViewProps } from "./types";
 
 const VIEWS: View[] = ["timeline", "list", "cards"];
@@ -67,6 +67,7 @@ export default function DayApp() {
             </button>
           ))}
         </div>
+        {prefs.view === "timeline" && shown.length > 0 && <Axis />}
       </header>
 
       <div class="toolbar">

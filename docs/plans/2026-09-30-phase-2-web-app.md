@@ -2790,6 +2790,12 @@ test("REQ-WEB-021: tapping a venue name filters to that venue", async ({ page })
   await expect(page).toHaveURL(/ort=spielhalle-beta/);
 });
 
+test("REQ-WEB-017: the hour axis stays visible while scrolling", async ({ page }) => {
+  await openDay(page);
+  await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
+  await expect(page.locator("header .axis")).toBeInViewport();
+});
+
 test("REQ-WEB-002: serves the data bundle", async ({ request }) => {
   const res = await request.get("/bundle.json");
   expect(res.ok()).toBe(true);

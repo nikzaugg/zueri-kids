@@ -45,7 +45,8 @@ https://claude.ai/artifact/6Qa7n7Rz3PRmAinraTL9My
   category, price note and a link to the offer's website and detail page.
 - **REQ-WEB-016:** A view switch offers "Zeitleiste" (default), "Liste" and
   "Karten". The last choice is remembered on the device.
-- **REQ-WEB-017 (timeline):** An hour axis from 08:00 to 19:00 heads the day;
+- **REQ-WEB-017 (timeline):** An hour axis from 08:00 to 19:00 heads the day
+  and stays visible while scrolling, pinned together with the day navigation;
   each occurrence is one row with its time and title above a bar spanning
   its start to end on that axis, coloured by category. Occurrences of kind
   `open` have a striped bar; a legend explains both. When showing today, a

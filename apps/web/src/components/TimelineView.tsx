@@ -27,6 +27,11 @@ function Row({ item, p }: { item: DayItem; p: ViewProps }) {
   );
 }
 
+// Pinned in the day view header so the time of day stays visible (REQ-WEB-017).
+export function Axis() {
+  return <div class="axis" aria-hidden="true">{AXIS_HOURS.map((h) => <span key={h}>{String(h).padStart(2, "0")}</span>)}</div>;
+}
+
 export function TimelineView(p: ViewProps) {
   const showNow = p.date === p.now.date && p.now.minutes >= AXIS_START && p.now.minutes <= AXIS_END;
   const rows = (items: DayItem[]) => (
@@ -38,7 +43,6 @@ export function TimelineView(p: ViewProps) {
   );
   return (
     <div class="tl">
-      <div class="axis" aria-hidden="true">{AXIS_HOURS.map((h) => <span key={h}>{String(h).padStart(2, "0")}</span>)}</div>
       {p.group === "venue"
         ? byVenue(p.items, p.favourites).map((g) => (
             <Fragment key={g.venue.id}>
