@@ -76,7 +76,6 @@ export const de = {
     setting: "Ort",
     category: "Kategorie",
     address: "Adresse",
-    notes: "Hinweise",
     back: "‹ Zurück zur Tagesansicht",
   },
   week: { title: (from: string, to: string) => `Woche ${from} – ${to}`, empty: "Keine passenden Angebote", openDay: (d: string) => `Tagesansicht ${d} öffnen` },

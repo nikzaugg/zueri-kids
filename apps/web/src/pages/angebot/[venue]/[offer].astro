@@ -1,0 +1,54 @@
+---
+import { isStale, type Offer, type Venue } from "@zueri-kids/core";
+import Base from "../../../layouts/Base.astro";
+import NextDates from "../../../components/NextDates";
+import StarToggle from "../../../components/StarToggle";
+import { getBundle } from "../../../data/bundle";
+import { de } from "../../../i18n/de";
+import { ageLabel, kreisLabel, longDate, priceLabel } from "../../../lib/labels";
+
+export function getStaticPaths() {
+  return getBundle().venues.flatMap((venue) =>
+    venue.offers.map((offer) => ({ params: { venue: venue.id, offer: offer.id }, props: { venue, offer } })),
+  );
+}
+interface Props { venue: Venue; offer: Offer }
+const { venue, offer } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+const stale = isStale(offer, getBundle().builtOn);
+const note = "note" in offer.price ? offer.price.note : undefined;
+const maps = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(venue.location.address)}`;
+const website = offer.url ?? venue.website;
+---
+<Base title={offer.title}>
+  <div class="stack">
+    <a class="backlink" href={`${base}/`}>{de.details.back}</a>
+    <div>
+      <h1 class="page-title">{offer.title}</h1>
+      <div class="venuehead" style="border-bottom:0;padding-top:0">
+        <h3>{venue.name}</h3>
+        <span class="meta"><span class="k">{kreisLabel(venue.location.kreis)}</span></span>
+        <StarToggle client:only="preact" venueId={venue.id} />
+      </div>
+      {stale && <p class="notice">{de.stale}</p>}
+    </div>
+    {offer.description && <p>{offer.description}</p>}
+    <dl class="facts">
+      <dt>{de.details.age}</dt><dd>{ageLabel(offer.ageMonths)}</dd>
+      <dt>{de.details.price}</dt><dd>{priceLabel(offer.price)}{note && ` · ${note}`}</dd>
+      <dt>{de.details.registration}</dt><dd>{de.registration[offer.registration]}</dd>
+      <dt>{de.details.setting}</dt><dd>{de.setting[offer.setting]}</dd>
+      <dt>{de.details.category}</dt><dd>{de.category[offer.category]}</dd>
+      <dt>{de.details.address}</dt><dd>{venue.location.address} · <a href={maps} target="_blank" rel="noopener">{de.details.maps}</a></dd>
+    </dl>
+    <section>
+      <h2 class="group" style="font-family:var(--f-display)">{de.details.next}</h2>
+      <NextDates client:only="preact" offerKey={`${venue.id}/${offer.id}`} />
+    </section>
+    <p>
+      {website && <><a href={website} target="_blank" rel="noopener">{de.details.website}</a> · </>}
+      <a href={offer.source.url} target="_blank" rel="noopener">{de.details.source}</a>
+    </p>
+    <p class="muted">{de.details.lastVerified(longDate(offer.source.lastVerified))}</p>
+  </div>
+</Base>
