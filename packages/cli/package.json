@@ -1,0 +1,6 @@
+{
+  "name": "@zueri-kids/cli",
+  "private": true,
+  "type": "module",
+  "dependencies": { "@zueri-kids/core": "*" }
+}
