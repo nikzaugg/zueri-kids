@@ -157,3 +157,7 @@ fieldset { border: 1px solid var(--line); border-radius: var(--r); padding: 12px
 
 /* Only day navigation stays pinned; view switches and filters scroll away (small phones). */
 .toolbar { display: grid; gap: 10px; padding-block: 2px 8px; }
+/* Week view: titles read like the day view; the link is still the whole title. */
+.weekday a.title { color: var(--ink); text-decoration: none; font-weight: 700; }
+.weekday a.title:hover { text-decoration: underline; text-decoration-color: var(--line); }
+.weekday .time { font-family: var(--f-display); }
