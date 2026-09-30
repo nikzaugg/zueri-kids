@@ -1,6 +1,6 @@
 # 020 – Research tool
 
-Status: Draft · Last updated: 2026-09-30
+Status: Implemented · Last updated: 2026-09-30
 
 The research tool has two layers:
 

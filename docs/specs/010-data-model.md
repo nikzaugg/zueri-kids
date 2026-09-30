@@ -1,6 +1,6 @@
 # 010 – Data model
 
-Status: Draft · Last updated: 2026-09-30
+Status: Implemented · Last updated: 2026-09-30
 
 The schema is implemented once in `packages/core` (Zod) and used by the CLI,
 the web app build and the research commands.

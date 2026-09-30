@@ -1,6 +1,6 @@
 # 000 – Overview
 
-Status: Draft · Last updated: 2026-09-30
+Status: Implemented · Last updated: 2026-09-30
 
 ## Problem
 
