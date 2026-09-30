@@ -49,10 +49,17 @@ research tool that keeps it up to date.
 - **REQ-META-003:** Automated tests reference the REQ ID they verify in the test
   name (e.g. `it("REQ-OCC-004: skips school holidays", …)`). (manual)
 - **REQ-META-004:** `npm run trace` lists every REQ ID and the tests referencing
-  it, and exits non-zero if a REQ has no test — unless the requirement is
-  tagged with the manual marker in its spec (verified by manual review).
-- **REQ-META-005:** Removed requirements are not renumbered; their IDs are
-  marked `(removed)` and never reused. (manual)
+  it. It exits non-zero if a REQ in an implemented spec has no test, unless
+  that REQ carries the manual marker. REQs without tests in draft specs are
+  listed as pending.
+- **REQ-META-005:** Removed requirements are not renumbered; their IDs carry
+  the removed marker and are never reused. (manual)
+- **REQ-META-006:** Every spec starts with a status line `Status: Draft` or
+  `Status: Implemented`. A spec becomes Implemented when its phase is done.
+  (manual)
+
+**Markers:** a requirement whose first paragraph ends with `(manual)` is
+verified by manual review; one ending with `(removed)` is retired.
 
 ## Repository layout
 

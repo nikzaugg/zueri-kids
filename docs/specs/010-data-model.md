@@ -126,7 +126,7 @@ publicHolidays:
   Zürich; `from` and `to` are inclusive, `from <= to`.
 - **REQ-DATA-041:** `publicHolidays` are the full-day public holidays observed
   in the city of Zurich. Half-day local holidays (Sechseläuten,
-  Knabenschiessen) are not listed.
+  Knabenschiessen) are not listed. (manual)
 
 ## Occurrence engine
 

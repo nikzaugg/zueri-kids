@@ -36,9 +36,10 @@ The research tool has two layers:
 ### trace
 
 - **REQ-CLI-020:** `npm run trace` implements REQ-META-004: collects REQ IDs
-  from `docs/specs/*.md`, collects references from test files
-  (`**/*.test.ts`, `**/*.spec.ts`), prints a coverage table and exits non-zero
-  if any REQ not tagged `(manual)` or `(removed)` lacks a test.
+  and markers from `docs/specs/*.md` and each spec's status line, collects
+  references from test files (`*.test.ts`, `*.spec.ts` under `packages/` and
+  `apps/`), prints a coverage table and exits non-zero on errors.
+- **REQ-CLI-022:** A requirement defined in more than one place is an error.
 - **REQ-CLI-021:** Trace reports test references to REQ IDs that do not exist
   in any spec as errors.
 
