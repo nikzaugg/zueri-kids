@@ -1,6 +1,6 @@
 # 030 – Web app
 
-Status: Draft · Last updated: 2026-09-30
+Status: Implemented · Last updated: 2026-09-30
 
 Static, mobile-first PWA built with Astro in `apps/web`. UI language German.
 Interactive parts are Preact islands. Reference mockup (v2, 2026-09-30):
