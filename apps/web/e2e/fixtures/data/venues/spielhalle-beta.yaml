@@ -1,0 +1,18 @@
+id: spielhalle-beta
+name: Spielhalle Beta
+type: indoor-playground
+location: { address: "Betastrasse 2, 8048 Zürich", municipality: Zürich, kreis: 9 }
+offers:
+  - id: halle
+    title: Spielhalle Beta
+    category: play
+    ageMonths: {}
+    setting: indoor
+    price: { type: donation }
+    registration: none
+    schedule:
+      type: openingHours
+      rules: [{ days: [tue, wed, thu, fri], start: "09:00", end: "12:00" }]
+      pausesDuringSchoolHolidays: false
+      pausesOnPublicHolidays: true
+    source: { url: "https://example.ch/halle", lastVerified: 2026-09-30, by: human }

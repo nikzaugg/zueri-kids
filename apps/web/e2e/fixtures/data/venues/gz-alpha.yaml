@@ -1,0 +1,33 @@
+id: gz-alpha
+name: GZ Alpha
+type: community-centre
+location: { address: "Alphaweg 1, 8055 Zürich", municipality: Zürich, kreis: 3 }
+offers:
+  - id: krabbeltreff
+    title: Krabbeltreff Alpha
+    description: Treff für Eltern mit Babys.
+    category: meetup
+    ageMonths: { min: 0, max: 36 }
+    setting: indoor
+    price: { type: free }
+    registration: none
+    schedule:
+      type: weekly
+      rules: [{ days: [tue], start: "09:30", end: "11:00" }]
+      pausesDuringSchoolHolidays: true
+      pausesOnPublicHolidays: true
+    url: https://example.ch/krabbeltreff
+    source: { url: "https://example.ch/krabbeltreff", lastVerified: 2026-09-30, by: human }
+  - id: musikkurs
+    title: Musikkurs Alpha
+    category: music
+    ageMonths: { min: 6, max: 48 }
+    setting: indoor
+    price: { type: fixed, chf: 20 }
+    registration: required
+    schedule:
+      type: weekly
+      rules: [{ days: [tue], start: "14:00", end: "15:00" }]
+      pausesDuringSchoolHolidays: true
+      pausesOnPublicHolidays: true
+    source: { url: "https://example.ch/musik", lastVerified: 2026-09-30, by: human }

@@ -2736,7 +2736,7 @@ export default defineConfig({
   use: { baseURL: "http://localhost:4322", timezoneId: "Europe/Zurich", locale: "de-CH" },
   projects: [{ name: "phone", use: { ...devices["Pixel 7"] } }],
   webServer: {
-    command: "astro build && astro preview --port 4322",
+    command: "npx astro build && npx astro preview --port 4322 --ignore-lock",
     env: { DATA_DIR: "e2e/fixtures/data", OUT_DIR: "./dist-e2e", ASTRO_TELEMETRY_DISABLED: "1" },
     url: "http://localhost:4322",
     reuseExistingServer: false,
