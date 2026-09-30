@@ -1521,7 +1521,7 @@ describe("timeline", () => {
     expect(axisPercent("19:00")).toBe(100);
     expect(axisPercent("06:00")).toBe(0);
     expect(axisPercent("21:30")).toBe(100);
-    expect(axisPercent(615)).toBeCloseTo(34.85, 1);
+    expect(axisPercent(615)).toBeCloseTo(20.45, 1); // 10:15 = 135 of 660 minutes
   });
 
   it("REQ-WEB-017: bars span start to end with a minimum width", () => {
