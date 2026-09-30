@@ -164,9 +164,14 @@ https://claude.ai/artifact/6Qa7n7Rz3PRmAinraTL9My
   (`workbox generateSW`) from the built site; app icons are generated with
   `@vite-pwa/assets-generator` from one SVG. No hand-written service worker.
   (manual)
-- **REQ-WEB-078:** The data bundle is fetched network-first (falling back to
-  the cached copy offline), so new data is visible on the next app start.
-  (manual)
+- **REQ-WEB-078:** The data bundle is precached together with the app shell,
+  so the app works offline from the first visit. Data only changes with a
+  deploy, which produces a new service worker revision; the update flow
+  (REQ-WEB-081) then delivers new app and data together. (manual)
+- **REQ-WEB-081:** The installed app updates itself: it checks for a new
+  service worker when opened and whenever it comes back to the foreground,
+  and reloads once when a new version has taken control. Registration uses
+  Workbox's `workbox-window`. (manual)
 - **REQ-WEB-071:** Layout works from 360px width without horizontal scrolling.
 - **REQ-WEB-079:** Page content never shows behind the phone's status bar:
   the top safe-area inset is covered with the page background on every page,
