@@ -78,6 +78,7 @@ describe("Venue schema", () => {
   it("REQ-DATA-021: restricts offer category", () => {
     expect(venuePaths(withOffer({ category: "party" }))).toContain("offers[0].category");
     expect(venuePaths(withOffer({ category: "play-corner" }))).toEqual([]);
+    expect(venuePaths(withOffer({ category: "advice" }))).toEqual([]);
   });
 
   it("REQ-DATA-022: validates age range in whole months", () => {

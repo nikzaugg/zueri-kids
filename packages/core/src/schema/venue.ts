@@ -68,7 +68,7 @@ export const Offer = z.strictObject({
   id: Id,
   title: z.string().min(1),
   description: z.string().optional(),
-  category: z.enum(["meetup", "play", "music", "movement", "culture", "nature", "course", "play-corner", "other"]),
+  category: z.enum(["meetup", "play", "music", "movement", "culture", "nature", "course", "play-corner", "advice", "other"]),
   ageMonths: AgeMonths,
   setting: z.enum(["indoor", "outdoor", "both"]),
   price: Price,

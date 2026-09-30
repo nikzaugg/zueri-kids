@@ -17,9 +17,13 @@ Process:
    duplicates.
 2. Find the official page(s) of the venue. Fetch only specific pages; stay
    under ~30 fetches (REQ-RES-006).
-3. Record only offers suitable for at least part of the 0–4 age range
-   (REQ-RES-007): parent–child meetups, play, music, movement, culture,
-   nature, courses, play corners.
+   GZ program pages (gz-zh.ch/<gz>/programm/) only list the next few days;
+   make sure you have seen every weekday (Mon–Sun) before concluding an
+   offer does not exist, e.g. a separate "Rollender Freitag" page.
+3. Record only offers for children in at least part of the 0–4 age range or
+   for their parents (REQ-RES-007): parent–child meetups, play, music,
+   movement, culture, nature, courses, play corners, and advice such as the
+   city's Familienberatung (often held in GZ).
 4. For each offer, fill every field from what the source says. Where the source
    is silent, use `unknown` (price, registration, amenities) or omit optional
    fields. Never guess (REQ-RES-002). For `pausesDuringSchoolHolidays` and

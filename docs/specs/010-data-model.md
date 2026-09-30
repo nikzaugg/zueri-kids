@@ -74,7 +74,7 @@ offers: [ ... ]
 - **REQ-DATA-021:** `category` is one of `meetup` (open parent–child meetups),
   `play` (free play, incl. indoor playgrounds), `music`, `movement`, `culture`
   (theatre, museum, reading), `nature`, `course`, `play-corner` (e.g. café play
-  corners), `other`.
+  corners), `advice` (counselling for parents, e.g. Familienberatung), `other`.
 - **REQ-DATA-022:** `ageMonths` has optional integer `min` (default 0) and
   optional integer `max` (no upper bound if absent); if both are present,
   `min <= max`. An empty object `{}` means "all ages".
