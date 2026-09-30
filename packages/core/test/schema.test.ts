@@ -79,6 +79,7 @@ describe("Venue schema", () => {
     expect(venuePaths(withOffer({ category: "party" }))).toContain("offers[0].category");
     expect(venuePaths(withOffer({ category: "play-corner" }))).toEqual([]);
     expect(venuePaths(withOffer({ category: "advice" }))).toEqual([]);
+    expect(venuePaths(withOffer({ category: "crafts" }))).toEqual([]);
   });
 
   it("REQ-DATA-022: validates age range in whole months", () => {
