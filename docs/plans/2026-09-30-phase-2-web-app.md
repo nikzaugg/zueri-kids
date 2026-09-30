@@ -2757,7 +2757,7 @@ async function openDay(page: Page, path = "/") {
   await expect(page.getByText("Krabbeltreff Alpha").first()).toBeVisible();
 }
 
-test("REQ-WEB-080: day view loads, filters, groups by venue and opens a detail page", async ({ page }) => {
+test("REQ-WEB-080 REQ-WEB-052: day view loads, filters, groups by venue and opens a detail page", async ({ page }) => {
   await openDay(page);
   await expect(page.getByText("Musikkurs Alpha").first()).toBeVisible();
   await expect(page.getByText("3 von 3 Angeboten passen zu deinen Filtern")).toBeVisible();
