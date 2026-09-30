@@ -1,0 +1,29 @@
+id: spielbaracke-kanzleiareal
+name: Spielbaracke Kanzleiareal
+type: other
+location:
+  address: Langstrasse 34, 8004 Zürich
+  municipality: Zürich
+  kreis: 4
+website: https://www.stadt-zuerich.ch/de/stadtleben/zusammenleben/in-den-quartieren/familienfreizeit/kreis4/kleinkinder.html
+offers:
+  - id: kleinkinderwerken
+    title: Kleinkinderwerken
+    description: >-
+      Werken, basteln, malen und Materialien erkunden mit wechselndem
+      Programm; daneben Bücher anschauen und spielen. Eltern tauschen sich
+      bei einem Tee aus. Angebot von Soziokultur Kinder.
+    category: crafts
+    ageMonths: { max: 48 }
+    setting: indoor
+    price: { type: free }
+    registration: none
+    schedule:
+      type: weekly
+      rules:
+        - { days: [fri], start: "09:30", end: "11:30" }
+      pausesDuringSchoolHolidays: true
+      pausesOnPublicHolidays: true
+    url: https://www.stadt-zuerich.ch/de/stadtleben/zusammenleben/in-den-quartieren/familienfreizeit/kreis4/kleinkinder.html
+    notes: "Contact Rahel Schibli, 077 427 36 72. Liability lies with participants."
+    source: { url: "https://www.stadt-zuerich.ch/de/stadtleben/zusammenleben/in-den-quartieren/familienfreizeit/kreis4/kleinkinder.html", lastVerified: 2026-09-30, by: ai }

@@ -1,0 +1,29 @@
+id: indoor-spielplatz-hardau
+name: Indoor-Spielplatz Hardau
+type: indoor-playground
+location:
+  address: Bullingerstrasse 60, 8004 Zürich
+  municipality: Zürich
+  kreis: 4
+website: https://www.stadt-zuerich.ch/de/stadtleben/zusammenleben/in-den-quartieren/familienfreizeit/kreis4/kleinkinder.html
+offers:
+  - id: indoor-spielplatz
+    title: Indoor-Spielplatz Hardau
+    description: >-
+      Ins Baumhaus klettern, Trampolin springen, in der Hängematte schaukeln,
+      Holzeisenbahn und Lego. Eltern begleiten ihre Kinder und lernen sich
+      bei einem Kaffee kennen. Angebot von Soziokultur Kinder.
+    category: play
+    ageMonths: { max: 48 }
+    setting: indoor
+    price: { type: free }
+    registration: none
+    schedule:
+      type: openingHours
+      rules:
+        - { days: [tue, wed, thu, fri], start: "09:00", end: "11:30" }
+      pausesDuringSchoolHolidays: true
+      pausesOnPublicHolidays: true
+    url: https://www.stadt-zuerich.ch/de/stadtleben/zusammenleben/in-den-quartieren/familienfreizeit/kreis4/kleinkinder.html
+    notes: "Run by Familientreff Hard. Contact Stephanie Holzegger, 044 412 83 89."
+    source: { url: "https://www.stadt-zuerich.ch/de/stadtleben/zusammenleben/in-den-quartieren/familienfreizeit/kreis4/kleinkinder.html", lastVerified: 2026-09-30, by: ai }

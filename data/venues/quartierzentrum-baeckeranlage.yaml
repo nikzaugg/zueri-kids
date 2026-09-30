@@ -1,0 +1,52 @@
+id: quartierzentrum-baeckeranlage
+name: Quartierzentrum Bäckeranlage
+type: community-centre
+location:
+  address: Hohlstrasse 67, 8004 Zürich
+  municipality: Zürich
+  kreis: 4
+website: https://www.stadt-zuerich.ch/de/stadtleben/zusammenleben/in-den-quartieren/familienfreizeit/kreis4/kleinkinder.html
+offers:
+  - id: indoor-spielplatz-winter
+    title: Indoor-Spielplatz Bäckeranlage
+    description: >-
+      Durch den grossen Saal springen, auf Matten herumtollen, balancieren,
+      Hütten bauen. Eltern begleiten ihre Kinder und lernen sich bei einem
+      Kaffee kennen. Nur im Winterhalbjahr.
+    category: play
+    ageMonths: { max: 48 }
+    setting: indoor
+    price: { type: free }
+    registration: none
+    schedule:
+      type: openingHours
+      rules:
+        - { days: [thu], start: "09:30", end: "12:00" }
+      validFrom: 2026-10-19
+      validUntil: 2027-04-25
+      pausesDuringSchoolHolidays: true
+      pausesOnPublicHolidays: true
+    url: https://www.stadt-zuerich.ch/de/stadtleben/zusammenleben/in-den-quartieren/familienfreizeit/kreis4/kleinkinder.html
+    notes: "Aktionsraum, 1st floor. From after the autumn holidays until before the spring holidays."
+    source: { url: "https://www.stadt-zuerich.ch/de/stadtleben/zusammenleben/in-den-quartieren/familienfreizeit/kreis4/kleinkinder.html", lastVerified: 2026-09-30, by: ai }
+
+  - id: quartier-insel
+    title: Quartier-Insel Bäckeranlage
+    description: >-
+      Treffpunkt für Jung und Alt mit Kreativität, Spielen und gemütlichem
+      Zusammensein. Im Sommer beim Spielwagen in der Bäckeranlage, im Winter
+      im Quartierzentrum.
+    category: meetup
+    ageMonths: {}
+    setting: both
+    price: { type: free }
+    registration: none
+    schedule:
+      type: weekly
+      rules:
+        - { days: [thu], start: "14:00", end: "17:00" }
+      pausesDuringSchoolHolidays: true
+      pausesOnPublicHolidays: true
+    url: https://www.stadt-zuerich.ch/de/stadtleben/zusammenleben/in-den-quartieren/familienfreizeit/kreis4/kleinkinder.html
+    notes: "Soziokultur Kinder and Quartierarbeit Kreis 4. Contact Laila Frauenfelder, 079 684 96 52."
+    source: { url: "https://www.stadt-zuerich.ch/de/stadtleben/zusammenleben/in-den-quartieren/familienfreizeit/kreis4/kleinkinder.html", lastVerified: 2026-09-30, by: ai }

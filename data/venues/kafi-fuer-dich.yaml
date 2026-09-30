@@ -1,0 +1,39 @@
+id: kafi-fuer-dich
+name: Kafi für Dich
+type: cafe
+location:
+  address: Stauffacherstrasse 141, 8004 Zürich
+  municipality: Zürich
+  kreis: 4
+website: https://www.fuerdich.ch/
+amenities:
+  stroller: unknown
+  changingTable: yes
+  cafe: yes
+notes: Café and guesthouse opposite the Bäckeranlage. High chairs; children's meals at reduced prices; Sunday brunch.
+offers:
+  - id: kinderecke
+    title: Kinderecke im Kafi für Dich
+    description: >-
+      Kinder sind herzlich willkommen: Spielecke mit Kreidetafel,
+      Schaukelpferd und Spielzeugkiste (laufend aufgefüllt von circle-toys.ch).
+      Selbstgemachte Kuchen, Frühstück und am Wochenende Brunch.
+    category: play-corner
+    ageMonths: {}
+    setting: indoor
+    price: { type: free }
+    registration: none
+    schedule:
+      type: openingHours
+      rules:
+        - { days: [mon, tue, wed, thu, fri], start: "08:00", end: "14:00" }
+        - { days: [sat, sun], start: "09:00", end: "14:30" }
+      pausesDuringSchoolHolidays: false
+      pausesOnPublicHolidays: false
+    url: https://www.fuerdich.ch/kafi
+    notes: >-
+      Play corner is free; you pay for food and drinks. Daytime hours = breakfast (Mon–Fri 08–14) and weekend brunch (09–14:30;
+      buffet in the cold months, reservation recommended: 043 317 91 60).
+      Also open in the evening (food, bar). Changing table in the ladies'
+      restroom (kinderregion.ch).
+    source: { url: "https://www.fuerdich.ch/kafi", lastVerified: 2026-09-30, by: ai }

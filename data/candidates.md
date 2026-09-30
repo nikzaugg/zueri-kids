@@ -9,11 +9,11 @@ once `/research` has created its venue file.
 - [ ] PBZ Sihlcity — https://www.pbz.ch/location/pbz-sihlcity/ — library branch near Wiedikon (check Kreis)
 
 ## Kreis 4 (Aussersihl)
-- [ ] Indoor-Spielplatz Hardau (Soziokultur Kinder) — https://www.stadt-zuerich.ch/de/stadtleben/zusammenleben/in-den-quartieren/familienfreizeit/kreis4/kleinkinder.html — free indoor play, Tue–Fri mornings
-- [ ] Kleinkinderwerken Spielbaracke (Soziokultur Kinder) — https://www.stadt-zuerich.ch/de/stadtleben/zusammenleben/in-den-quartieren/familienfreizeit/kreis4/kleinkinder.html — free toddler crafting, Fri mornings
+- [x] Indoor-Spielplatz Hardau (Soziokultur Kinder) — https://www.stadt-zuerich.ch/de/stadtleben/zusammenleben/in-den-quartieren/familienfreizeit/kreis4/kleinkinder.html — free indoor play, Tue–Fri mornings
+- [x] Kleinkinderwerken Spielbaracke (Soziokultur Kinder) — https://www.stadt-zuerich.ch/de/stadtleben/zusammenleben/in-den-quartieren/familienfreizeit/kreis4/kleinkinder.html — free toddler crafting, Fri mornings
 - [ ] Familientreff Hard (Soziokultur Kinder) — https://www.stadt-zuerich.ch/de/stadtleben/zusammenleben/in-den-quartieren/familienfreizeit/kreis4/kleinkinder.html — free family meeting point
-- [ ] Bäckeranlage: Quartier-Insel, Indoor-Spielplatz (winter), Bilderbuchkino — https://www.stadt-zuerich.ch/de/stadtleben/zusammenleben/in-den-quartieren/familienfreizeit/kreis4/kleinkinder.html — several free offers at one place
-- [ ] Kafi für Dich — https://www.fuerdich.ch/ — café with play corner, Stauffacherstrasse 141
+- [x] Bäckeranlage: Quartier-Insel, Indoor-Spielplatz (winter), Bilderbuchkino — https://www.stadt-zuerich.ch/de/stadtleben/zusammenleben/in-den-quartieren/familienfreizeit/kreis4/kleinkinder.html — several free offers at one place
+- [x] Kafi für Dich — https://www.fuerdich.ch/ — café with play corner, Stauffacherstrasse 141
 - [ ] PBZ Hardau — https://www.pbz.ch/location/hardau/ — library branch
 - [ ] PBZ Aussersihl — https://www.pbz.ch/location/aussersihl/ — library branch
 
