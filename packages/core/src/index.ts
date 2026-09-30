@@ -3,3 +3,4 @@ export * from "./dates";
 export * from "./issues";
 export * from "./schema/venue";
 export * from "./schema/holidays";
+export * from "./occurrences";
