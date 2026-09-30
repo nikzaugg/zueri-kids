@@ -1,0 +1,16 @@
+{
+  "name": "Züri Kids",
+  "short_name": "Züri Kids",
+  "description": "Was machen wir heute? Angebote für Kinder von 0 bis 4 Jahren in Zürich.",
+  "lang": "de-CH",
+  "start_url": ".",
+  "scope": ".",
+  "display": "standalone",
+  "background_color": "#f4f7f6",
+  "theme_color": "#1f56cc",
+  "icons": [
+    { "src": "pwa-192x192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "pwa-512x512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "maskable-icon-512x512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

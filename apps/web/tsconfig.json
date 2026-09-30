@@ -1,6 +1,18 @@
 {
   "extends": "astro/tsconfigs/strict",
-  "compilerOptions": { "jsx": "react-jsx", "jsxImportSource": "preact" },
-  "include": [".astro/types.d.ts", "src/**/*", "e2e/**/*", "playwright.config.ts"],
-  "exclude": ["dist", "dist-e2e"]
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "jsxImportSource": "preact"
+  },
+  "include": [
+    ".astro/types.d.ts",
+    "src/**/*",
+    "e2e/**/*",
+    "playwright.config.ts",
+    "pwa-assets.config.ts"
+  ],
+  "exclude": [
+    "dist",
+    "dist-e2e"
+  ]
 }

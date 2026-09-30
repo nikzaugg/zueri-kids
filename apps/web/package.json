@@ -7,7 +7,7 @@
     "build": "ASTRO_TELEMETRY_DISABLED=1 astro build && workbox generateSW workbox-config.cjs",
     "preview": "ASTRO_TELEMETRY_DISABLED=1 astro preview --host",
     "check": "ASTRO_TELEMETRY_DISABLED=1 astro check",
-    "icons": "pwa-assets-generator --preset minimal-2023 public/icon.svg",
+    "icons": "pwa-assets-generator",
     "e2e": "playwright test"
   },
   "dependencies": {
