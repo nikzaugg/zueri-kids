@@ -5,3 +5,5 @@ coverage/
 playwright-report/
 test-results/
 .DS_Store
+apps/web/dist-e2e/
+apps/web/.astro/

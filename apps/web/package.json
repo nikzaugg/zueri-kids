@@ -1,0 +1,26 @@
+{
+  "name": "@zueri-kids/web",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build && workbox generateSW workbox-config.cjs",
+    "preview": "astro preview --host",
+    "check": "astro check",
+    "icons": "pwa-assets-generator --preset minimal-2023 public/icon.svg",
+    "e2e": "playwright test"
+  },
+  "dependencies": {
+    "@astrojs/preact": "^6.0.5",
+    "@zueri-kids/core": "*",
+    "astro": "^7.3.5",
+    "preact": "^10.29.8"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.10",
+    "@playwright/test": "^1.63.0",
+    "@vite-pwa/assets-generator": "^2.0.0",
+    "typescript": "^5.9.3",
+    "workbox-cli": "^7.4.1"
+  }
+}

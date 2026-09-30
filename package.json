@@ -6,19 +6,27 @@
     "node": ">=22"
   },
   "workspaces": [
-    "packages/*"
+    "packages/*",
+    "apps/*"
   ],
   "scripts": {
     "test": "vitest run",
-    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "typecheck": "tsc --noEmit -p tsconfig.json && npm run check -w @zueri-kids/web",
     "validate": "tsx packages/cli/src/bin/validate.ts data",
     "report": "tsx packages/cli/src/bin/report.ts data",
-    "trace": "tsx packages/cli/src/bin/trace.ts ."
+    "trace": "tsx packages/cli/src/bin/trace.ts .",
+    "dev": "npm run dev -w @zueri-kids/web",
+    "build": "npm run build -w @zueri-kids/web",
+    "preview": "npm run preview -w @zueri-kids/web",
+    "e2e": "npm run e2e -w @zueri-kids/web"
   },
   "devDependencies": {
     "@types/node": "^22.20.4",
     "tsx": "^4.23.15",
     "typescript": "^5.9.3",
     "vitest": "^5.0.2"
+  },
+  "overrides": {
+    "tmp": "^0.2.7"
   }
 }

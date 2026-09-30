@@ -1,0 +1,45 @@
+---
+import "../styles/global.css";
+import { de } from "../i18n/de";
+
+interface Props {
+  title: string;
+  active?: "today" | "week" | "search" | "settings";
+  wide?: boolean;
+}
+const { title, active, wide = false } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+const nav = [
+  ["today", "/", de.nav.today],
+  ["week", "/woche/", de.nav.week],
+  ["search", "/suche/", de.nav.search],
+  ["settings", "/einstellungen/", de.nav.settings],
+] as const;
+---
+<!doctype html>
+<html lang="de-CH">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>{`${title} · ${de.appName}`}</title>
+    <meta name="theme-color" content="#1f56cc" />
+    <link rel="manifest" href={`${base}/manifest.webmanifest`} />
+    <link rel="icon" href={`${base}/favicon.ico`} sizes="48x48" />
+    <link rel="icon" href={`${base}/icon.svg`} type="image/svg+xml" />
+    <link rel="apple-touch-icon" href={`${base}/apple-touch-icon-180x180.png`} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&display=swap" />
+  </head>
+  <body>
+    <div class:list={["app", { wide }]}><slot /></div>
+    <nav class="bottomnav" aria-label={de.nav.label}>
+      {nav.map(([id, path, label]) => (
+        <a href={`${base}${path}`} aria-current={active === id ? "page" : undefined}>{label}</a>
+      ))}
+    </nav>
+    <script is:inline define:vars={{ swUrl: `${base}/sw.js` }}>
+      if ("serviceWorker" in navigator && location.hostname !== "localhost") navigator.serviceWorker.register(swUrl);
+    </script>
+  </body>
+</html>
