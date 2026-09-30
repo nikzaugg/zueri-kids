@@ -1,0 +1,97 @@
+id: gz-gruenau
+name: GZ Grünau
+type: community-centre
+location:
+  address: Grünauring 18, 8064 Zürich
+  municipality: Zürich
+  kreis: 9
+website: https://gz-zh.ch/gz-gruenau/
+amenities:
+  stroller: yes
+  changingTable: unknown
+  cafe: yes
+offers:
+  - id: malen-werken-minis
+    title: Malen und Werken für Minis
+    description: >-
+      Kleine Objekte gestalten, mit Materialien experimentieren und
+      grossflächig malen – für Kinder mit ihren Begleitpersonen. Cafeteria offen.
+    category: crafts
+    ageMonths: { min: 24, max: 60 }
+    setting: indoor
+    price: { type: range, minChf: 2, maxChf: 5, note: "Materialkosten, Kulturlegi 50%" }
+    registration: none
+    schedule:
+      type: weekly
+      rules:
+        - { days: [tue], start: "09:30", end: "11:30" }
+      pausesDuringSchoolHolidays: true
+      pausesOnPublicHolidays: true
+    url: https://gz-zh.ch/gz-gruenau/angebote/werken-malen-fuer-vorschulkinder/
+    source: { url: "https://gz-zh.ch/gz-gruenau/angebote/werken-malen-fuer-vorschulkinder/", lastVerified: 2026-09-30, by: ai }
+
+  - id: krabbelgruppe
+    title: Krabbelgruppe
+    description: Treffpunkt für Eltern mit Kleinkindern ab 4 Monaten – kennenlernen, austauschen, spielen.
+    category: meetup
+    ageMonths: { min: 4 }
+    setting: indoor
+    price: { type: free }
+    registration: none
+    schedule:
+      type: dates
+      dates:
+        - { date: 2026-10-20, start: "10:00", end: "11:00" }
+        - { date: 2026-11-03, start: "10:00", end: "11:00" }
+        - { date: 2026-11-17, start: "10:00", end: "11:00" }
+        - { date: 2026-12-01, start: "10:00", end: "11:00" }
+        - { date: 2026-12-15, start: "10:00", end: "11:00" }
+    url: https://gz-zh.ch/gz-gruenau/angebote/krabbelgruppe/
+    notes: Every second Tuesday.
+    source: { url: "https://gz-zh.ch/gz-gruenau/angebote/krabbelgruppe/", lastVerified: 2026-09-30, by: ai }
+
+  - id: bewegen-spielen-sprechen
+    title: Bewegen – Spielen – Sprechen
+    description: >-
+      Freies Spiel mit anderen Kindern und Aktivitäten für Bewegung und
+      Sprache, in Begleitung einer Bezugsperson. Angebot der Familienberatung.
+    category: movement
+    ageMonths: { min: 20, max: 60 }
+    setting: indoor
+    price: { type: free }
+    registration: required
+    schedule:
+      type: weekly
+      rules:
+        - { days: [thu], start: "09:00", end: "10:15" }
+        - { days: [thu], start: "10:30", end: "11:45" }
+      pausesDuringSchoolHolidays: false
+      pausesOnPublicHolidays: true
+    url: https://gz-zh.ch/gz-gruenau/angebote/bewegen-spielen-sprechen/
+    notes: Registration on the Familienberatung website, limited places. Also runs during school holidays (dates listed).
+    source: { url: "https://gz-zh.ch/gz-gruenau/angebote/bewegen-spielen-sprechen/", lastVerified: 2026-09-30, by: ai }
+
+  - id: begleiteter-bewegungsraum
+    title: Begleiteter Bewegungsraum
+    description: Frei krabbeln, klettern und erforschen; andere Familien kennenlernen. Angebot der Familienberatung.
+    category: movement
+    ageMonths: { min: 5, max: 20 }
+    setting: indoor
+    price: { type: free }
+    registration: required
+    schedule:
+      type: dates
+      dates:
+        - { date: 2026-10-09, start: "10:30", end: "11:45" }
+        - { date: 2026-10-23, start: "10:30", end: "11:45" }
+        - { date: 2026-10-30, start: "10:30", end: "11:45" }
+        - { date: 2026-11-06, start: "10:30", end: "11:45" }
+        - { date: 2026-11-13, start: "10:30", end: "11:45" }
+        - { date: 2026-11-20, start: "10:30", end: "11:45" }
+        - { date: 2026-11-27, start: "10:30", end: "11:45" }
+        - { date: 2026-12-04, start: "10:30", end: "11:45" }
+        - { date: 2026-12-11, start: "10:30", end: "11:45" }
+        - { date: 2026-12-18, start: "10:30", end: "11:45" }
+    url: https://gz-zh.ch/gz-gruenau/angebote/begleiteter-bewegungsraum/
+    notes: Registration via Familienberatung, limited places; check the link for date changes.
+    source: { url: "https://gz-zh.ch/gz-gruenau/angebote/begleiteter-bewegungsraum/", lastVerified: 2026-09-30, by: ai }

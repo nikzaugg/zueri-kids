@@ -1,0 +1,33 @@
+id: gz-loogarten-badenerstrasse
+name: GZ Loogarten – Standort Badenerstrasse
+type: community-centre
+location:
+  address: Badenerstrasse 658, 8048 Zürich
+  municipality: Zürich
+  kreis: 9
+website: https://gz-zh.ch/gz-loogarten/
+amenities:
+  stroller: yes
+offers:
+  - id: eltern-cafe
+    title: Eltern-Café
+    description: >-
+      Treffpunkt für Eltern mit jungen Kindern: austauschen, während die
+      Kinder spielen. Jeden zweiten Nachmittag ein Input (ab ca. 15 Uhr) zu
+      Alltag, Erziehung oder Leben in Zürich.
+    category: meetup
+    ageMonths: { min: 0, max: 60 }
+    setting: indoor
+    price: { type: free }
+    registration: none
+    schedule:
+      type: weekly
+      rules:
+        - { days: [thu], start: "14:30", end: "17:30" }
+      validFrom: 2026-10-22
+      pausesDuringSchoolHolidays: true
+      pausesOnPublicHolidays: true
+      cancelled: [2027-03-25]
+    url: https://gz-zh.ch/gz-loogarten/angebote/eltern-themen-cafe/
+    notes: "Organised by Bildungsmotor and GZ Loogarten. Topics via WhatsApp group (078 208 70 30)."
+    source: { url: "https://gz-zh.ch/gz-loogarten/angebote/eltern-themen-cafe/", lastVerified: 2026-09-30, by: ai }

@@ -1,0 +1,85 @@
+id: gz-loogarten
+name: GZ Loogarten
+type: community-centre
+location:
+  address: Salzweg 1, 8048 Zürich
+  municipality: Zürich
+  kreis: 9
+website: https://gz-zh.ch/gz-loogarten/
+amenities:
+  stroller: yes
+  changingTable: unknown
+  cafe: yes
+offers:
+  - id: spielraum
+    title: Spielraum für Kinder bis 7 J.
+    description: >-
+      Frei spielen, experimentieren und sich austoben im kleinen Saal, für
+      Kinder bis 7 Jahre in Begleitung einer erwachsenen Person.
+    category: play
+    ageMonths: { max: 84 }
+    setting: indoor
+    price: { type: donation, note: freiwilliger Unkostenbeitrag }
+    registration: none
+    schedule:
+      type: openingHours
+      rules:
+        - { days: [tue, wed, thu, fri], start: "09:00", end: "12:00" }
+        - { days: [mon, tue, wed, thu, fri], start: "14:00", end: "17:00" }
+      pausesDuringSchoolHolidays: false
+      pausesOnPublicHolidays: true
+    url: https://gz-zh.ch/gz-loogarten/angebote/spielraum-fuer-kinder-bis-7-jahren/
+    notes: Also open during school holidays (dates listed). Occasionally closed for events, e.g. the children's items market.
+    source: { url: "https://gz-zh.ch/gz-loogarten/angebote/spielraum-fuer-kinder-bis-7-jahren/", lastVerified: 2026-09-30, by: ai }
+
+  - id: kreativangebote-ab-2-5
+    title: Kreativangebote ab 2,5 Jahren
+    description: >-
+      Offenes Atelier: Kleinkinder entdecken mit ihrer Begleitperson Ton,
+      Holz, Papier und Farbe.
+    category: crafts
+    ageMonths: { min: 30, max: 60 }
+    setting: indoor
+    price: { type: fixed, chf: 8, note: "pro Nachmittag, Geschwister CHF 6, Kulturlegi 50%" }
+    registration: none
+    schedule:
+      type: weekly
+      rules:
+        - { days: [tue], start: "14:30", end: "16:30" }
+      pausesDuringSchoolHolidays: true
+      pausesOnPublicHolidays: true
+    url: https://gz-zh.ch/gz-loogarten/angebote/werken-fuer-kleinkinder-familien/
+    notes: Text says every Tuesday, but only 20.10. and 27.10. are listed so far.
+    source: { url: "https://gz-zh.ch/gz-loogarten/angebote/werken-fuer-kleinkinder-familien/", lastVerified: 2026-09-30, by: ai }
+
+  - id: vater-kind-werken
+    title: Vater-Kind-Werken
+    description: Schneiden, malen, sägen – für Väter mit Kindern von 3–7 Jahren. Znüni mitbringen.
+    category: crafts
+    ageMonths: { min: 36, max: 84 }
+    setting: indoor
+    price: { type: fixed, chf: 5, note: pro Person }
+    registration: unknown
+    schedule:
+      type: dates
+      dates:
+        - { date: 2026-10-03, start: "10:15", end: "11:45" }
+        - { date: 2026-11-07, start: "10:15", end: "11:45" }
+    url: https://gz-zh.ch/gz-loogarten/angebote/vater-kind-werken/
+    source: { url: "https://gz-zh.ch/gz-loogarten/angebote/vater-kind-werken/", lastVerified: 2026-09-30, by: ai }
+
+  - id: kindertheater-schatzinsel
+    title: "Kindertheater: «Die Schatzinsel»"
+    description: Piratengeschichte, von Kindern aufgeführt (Kindertheater Märlitrucke), für Leute ab ca. 3 Jahren.
+    category: culture
+    ageMonths: { min: 36 }
+    setting: indoor
+    price: { type: donation, note: "Eintritt frei, Kollekte" }
+    registration: none
+    schedule:
+      type: dates
+      dates:
+        - { date: 2026-10-16, start: "17:30", end: "19:00" }
+        - { date: 2026-10-17, start: "15:00", end: "16:30" }
+    url: https://gz-zh.ch/gz-loogarten/angebote/kindertheater-schatzinsel/
+    source: { url: "https://gz-zh.ch/gz-loogarten/angebote/kindertheater-schatzinsel/", lastVerified: 2026-09-30, by: ai }

@@ -18,9 +18,9 @@ once `/research` has created its venue file.
 - [ ] PBZ Aussersihl — https://www.pbz.ch/location/aussersihl/ — library branch
 
 ## Kreis 9 (Altstetten, Albisrieden)
-- [ ] GZ Loogarten — https://gz-zh.ch/gz-loogarten/ — community centre in Altstetten
-- [ ] GZ Bachwiesen — https://gz-zh.ch/gz-bachwiesen/ — community centre in Albisrieden
-- [ ] GZ Grünau — https://gz-zh.ch/gz-gruenau/ — community centre in Grünau
+- [x] GZ Loogarten — https://gz-zh.ch/gz-loogarten/ — community centre in Altstetten
+- [x] GZ Bachwiesen — https://gz-zh.ch/gz-bachwiesen/ — community centre in Albisrieden
+- [x] GZ Grünau — https://gz-zh.ch/gz-gruenau/ — community centre in Grünau
 - [ ] Kids Playland — https://kinderregion.ch/de/besuchen/kids-playland/ — indoor playground at Letzipark, suitable for toddlers
 - [ ] Play Village — https://mycation.ch/fuenf-indoor-spielplaetze-in-zuerich-im-vergleich/ — role-play indoor playground, Buckhauserstrasse 28
 - [ ] ELCH Familienzentrum Altstetten — https://zentrumelch.ch/familienzentren-zuerich-elch/altstetten/uebersicht — family centre with drop-in childcare

@@ -1,0 +1,144 @@
+id: gz-bachwiesen
+name: GZ Bachwiesen
+type: community-centre
+location:
+  address: Bachwiesenstrasse 40, 8047 Zürich
+  municipality: Zürich
+  kreis: 9
+website: https://gz-zh.ch/gz-bachwiesen/
+amenities:
+  stroller: yes
+  changingTable: unknown
+  cafe: yes
+offers:
+  - id: kleinkindermalen
+    title: Kleinkindermalen
+    description: Gemeinsam mit Mami oder Papi malen die kleinen Picassos ab 2 Jahren.
+    category: crafts
+    ageMonths: { min: 24 }
+    setting: indoor
+    price: { type: fixed, chf: 2, note: "Unkostenbeitrag ab CHF 2" }
+    registration: none
+    schedule:
+      type: weekly
+      rules:
+        - { days: [fri], start: "15:15", end: "16:45" }
+      pausesDuringSchoolHolidays: true
+      pausesOnPublicHolidays: true
+    url: https://gz-zh.ch/gz-bachwiesen/angebote/kleinkindermalen/
+    notes: Text says every Friday, but only 2.10. and 23.10. are listed so far.
+    source: { url: "https://gz-zh.ch/gz-bachwiesen/angebote/kleinkindermalen/", lastVerified: 2026-09-30, by: ai }
+
+  - id: kerzenwerkstatt-minis
+    title: Kerzenwerkstatt für Minis
+    description: >-
+      Kinder machen mit einer Bezugsperson ihre farbigen Kerzen selber –
+      hämmern, schneiden, giessen. Kinder unter 3 Jahren nicht zugelassen.
+    category: crafts
+    ageMonths: { min: 36, max: 84 }
+    setting: indoor
+    price: { type: fixed, chf: 4, note: "pro 100 g Paraffin, nach Gewicht" }
+    registration: none
+    schedule:
+      type: dates
+      dates:
+        - { date: 2026-12-14, start: "09:00", end: "11:30" }
+        - { date: 2026-12-15, start: "09:00", end: "11:30" }
+    url: https://gz-zh.ch/gz-bachwiesen/angebote/kerzenwerkstatt-fuer-minis-2/
+    notes: Babies preferably in a carrier instead of a stroller in the atelier. Bring your own bags.
+    source: { url: "https://gz-zh.ch/gz-bachwiesen/angebote/kerzenwerkstatt-fuer-minis-2/", lastVerified: 2026-09-30, by: ai }
+
+  - id: musigzwergli
+    title: Musigzwergli
+    description: >-
+      Singen, Versli, tanzen und mit Instrumenten experimentieren, in
+      Begleitung eines Elternteils. Kurs mit 2 Gruppen.
+    category: music
+    ageMonths: { min: 18, max: 48 }
+    setting: indoor
+    price: { type: unknown }
+    registration: required
+    schedule:
+      type: weekly
+      rules:
+        - { days: [mon], start: "09:30", end: "10:15" }
+        - { days: [mon], start: "10:30", end: "11:15" }
+      validFrom: 2026-10-19
+      validUntil: 2026-12-14
+      pausesDuringSchoolHolidays: true
+      pausesOnPublicHolidays: true
+    url: https://gz-zh.ch/gz-bachwiesen/angebote/musigzwerge/
+    notes: "Prices on www.musigzwergli.ch. Registration with Nelly Gyimesi, 078 889 34 32."
+    source: { url: "https://gz-zh.ch/gz-bachwiesen/angebote/musigzwerge/", lastVerified: 2026-09-30, by: ai }
+
+  - id: fitdankbaby-mini-maxi
+    title: fitdankbaby® mini/maxi
+    description: Fitness für Mami mit Baby im Tragegurt, dazu altersgerechte Spiele fürs Baby.
+    category: movement
+    ageMonths: { min: 3, max: 12 }
+    setting: indoor
+    price: { type: fixed, chf: 240, note: "8 Lektionen (27.10.–15.12.2026)" }
+    registration: required
+    schedule:
+      type: weekly
+      rules:
+        - { days: [tue], start: "09:10", end: "10:20" }
+      pausesDuringSchoolHolidays: true
+      pausesOnPublicHolidays: true
+    url: https://gz-zh.ch/gz-bachwiesen/angebote/fitdankbaby/
+    notes: "Registration with Simone Ludaescher, 076 433 03 45."
+    source: { url: "https://gz-zh.ch/gz-bachwiesen/angebote/fitdankbaby/", lastVerified: 2026-09-30, by: ai }
+
+  - id: fitdankbaby-kids
+    title: fitdankbaby® KIDS
+    description: Workout für Mami kombiniert mit Bewegungsangeboten fürs Kind – hüpfen, klettern, tanzen.
+    category: movement
+    ageMonths: { min: 14, max: 30 }
+    setting: indoor
+    price: { type: fixed, chf: 480, note: "15 Lektionen (18.8.–15.12.2026), Quereinstieg möglich" }
+    registration: required
+    schedule:
+      type: weekly
+      rules:
+        - { days: [tue], start: "10:35", end: "11:40" }
+      pausesDuringSchoolHolidays: true
+      pausesOnPublicHolidays: true
+    url: https://gz-zh.ch/gz-bachwiesen/angebote/fitdankbaby-kids/
+    notes: "Registration with Simone Ludaescher, 076 433 03 45."
+    source: { url: "https://gz-zh.ch/gz-bachwiesen/angebote/fitdankbaby-kids/", lastVerified: 2026-09-30, by: ai }
+
+  - id: rueckbildung-fitdankbaby
+    title: Rückbildung fitdankbaby®
+    description: Rückbildung mit oder ohne Baby ab 6 Wochen nach der Geburt; Massage und Strampelspiele fürs Baby.
+    category: movement
+    ageMonths: { max: 12 }
+    setting: indoor
+    price: { type: fixed, chf: 240, note: "8 Lektionen (28.10.–16.12.2026)" }
+    registration: required
+    schedule:
+      type: weekly
+      rules:
+        - { days: [wed], start: "09:45", end: "10:50" }
+      pausesDuringSchoolHolidays: true
+      pausesOnPublicHolidays: true
+    url: https://gz-zh.ch/gz-bachwiesen/angebote/rueckbildung-fitdankbaby-neu/
+    notes: "Registration with Simone Ludaescher, 076 433 03 45."
+    source: { url: "https://gz-zh.ch/gz-bachwiesen/angebote/rueckbildung-fitdankbaby-neu/", lastVerified: 2026-09-30, by: ai }
+
+  - id: postnatal-pilates-with-baby
+    title: Postnatal Pilates Class with Baby
+    description: Postnatal Pilates mit Baby, auf Englisch, mit einer Hebamme und Beckenbodentrainerin. Einstieg jederzeit.
+    category: movement
+    ageMonths: { max: 12 }
+    setting: indoor
+    price: { type: fixed, chf: 288, note: "8er-Abo, zeitlich unbegrenzt" }
+    registration: required
+    schedule:
+      type: weekly
+      rules:
+        - { days: [wed], start: "10:00", end: "11:15" }
+      pausesDuringSchoolHolidays: true
+      pausesOnPublicHolidays: true
+    url: https://gz-zh.ch/gz-bachwiesen/angebote/postnatal-pilates-class-with-baby/
+    notes: "Taught in English. Imke Albrecht, 078 743 83 28."
+    source: { url: "https://gz-zh.ch/gz-bachwiesen/angebote/postnatal-pilates-class-with-baby/", lastVerified: 2026-09-30, by: ai }
