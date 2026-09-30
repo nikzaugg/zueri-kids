@@ -1,0 +1,340 @@
+<title>Züri Kids Tagesansicht</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&display=swap">
+<style>
+/* Layout: one phone-first app column; sticky day bar, filter chips, then the day in one of three views. */
+:root {
+  --bg: #f4f7f6; --surface: #ffffff; --ink: #15211d; --muted: #586a64; --line: #dbe4e1;
+  --accent: #1f56cc; --accent-ink: #ffffff; --accent-soft: #e5edfc; --now: #d9482b; --notice: #fff3cf; --notice-ink: #5a4300;
+  --c-play: #e9a93a; --c-movement: #3fa77a; --c-music: #8a66dc; --c-crafts: #dd6d4c; --c-culture: #3592d0;
+  --c-meetup: #cf5f98; --c-advice: #74857f; --c-play-corner: #b98e2f; --c-nature: #5f9a3a; --c-course: #6a7bd6; --c-other: #8b8f8e;
+  --f-display: "Bricolage Grotesque", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+  --f-body: "Atkinson Hyperlegible", "Segoe UI", system-ui, sans-serif;
+  --r: 12px;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #0f1513; --surface: #161f1c; --ink: #e5eeea; --muted: #9aaca6; --line: #26332f;
+  --accent: #86a9ff; --accent-ink: #0c1633; --accent-soft: #1b2745; --now: #ff7a5c; --notice: #3a3112; --notice-ink: #f3dc93;
+  color-scheme: dark; } }
+:root[data-theme="dark"] {
+  --bg: #0f1513; --surface: #161f1c; --ink: #e5eeea; --muted: #9aaca6; --line: #26332f;
+  --accent: #86a9ff; --accent-ink: #0c1633; --accent-soft: #1b2745; --now: #ff7a5c; --notice: #3a3112; --notice-ink: #f3dc93;
+  color-scheme: dark; }
+
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font-family: var(--f-body); font-size: 16px; line-height: 1.45; }
+.app { max-width: 760px; margin: 0 auto; padding-inline: 16px; padding-block: 0 48px; }
+button { font: inherit; color: inherit; }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+
+.mock-note { font-size: 13px; color: var(--muted); padding-block: 12px 4px; }
+.mock-note b { color: var(--ink); }
+
+header.bar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--bg); padding-block: 10px 8px; display: grid; gap: 10px; }
+.brand { font-family: var(--f-display); font-weight: 800; font-size: 15px; letter-spacing: .02em; color: var(--muted); }
+.brand span { color: var(--accent); }
+.daynav { display: flex; align-items: center; gap: 8px; }
+.daynav h1 { font-family: var(--f-display); font-weight: 700; font-size: clamp(24px, 6vw, 32px); margin: 0; flex: 1; min-width: 0; text-wrap: balance; line-height: 1.1; }
+.daynav h1 small { display: block; font-family: var(--f-body); font-size: 14px; font-weight: 400; color: var(--muted); }
+.iconbtn { width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--line); background: var(--surface); cursor: pointer; font-size: 20px; line-height: 1; }
+.iconbtn:disabled { opacity: .35; cursor: default; }
+
+.days { display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; }
+.days button { flex: 1 0 44px; border: 1px solid var(--line); background: var(--surface); border-radius: 10px; padding: 6px 4px; cursor: pointer; display: grid; font-size: 12px; color: var(--muted); }
+.days button b { font-family: var(--f-display); font-size: 17px; color: var(--ink); font-variant-numeric: tabular-nums; }
+.days button[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+.days button[aria-pressed="true"] b { color: var(--accent-ink); }
+
+.views { display: inline-flex; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); padding: 3px; gap: 2px; justify-self: start; }
+.views button { border: 0; background: transparent; border-radius: 999px; padding: 6px 14px; cursor: pointer; font-weight: 700; font-size: 14px; color: var(--muted); }
+.views button[aria-pressed="true"] { background: var(--ink); color: var(--bg); }
+
+.chips { display: flex; gap: 6px; overflow-x: auto; padding-block: 2px 4px; scrollbar-width: thin; }
+.chip { flex: 0 0 auto; border: 1px solid var(--line); background: var(--surface); border-radius: 999px; padding: 6px 12px; font-size: 14px; cursor: pointer; white-space: nowrap; }
+.chip[aria-pressed="true"] { background: var(--accent-soft); border-color: var(--accent); color: var(--ink); font-weight: 700; }
+.chip.kreis { padding-inline: 10px; font-variant-numeric: tabular-nums; }
+.sep { flex: 0 0 1px; background: var(--line); margin-inline: 2px; }
+
+.notice { background: var(--notice); color: var(--notice-ink); border-radius: 10px; padding: 8px 12px; font-size: 14px; }
+.summary { font-size: 14px; color: var(--muted); padding-block: 4px; }
+
+main { display: grid; gap: 18px; padding-top: 6px; }
+.group h2 { font-family: var(--f-display); font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin: 0 0 6px; font-weight: 700; }
+
+/* ---------- shared row meta ---------- */
+.dot { width: 10px; height: 10px; border-radius: 50%; flex: 0 0 10px; background: var(--cat); margin-top: 7px; }
+.title { font-weight: 700; }
+.meta { font-size: 14px; color: var(--muted); display: flex; flex-wrap: wrap; gap: 2px 10px; }
+.meta .k { font-variant-numeric: tabular-nums; font-weight: 700; color: var(--ink); }
+.tag { font-size: 12px; font-weight: 700; border-radius: 6px; padding: 1px 6px; background: var(--accent-soft); color: var(--ink); }
+.tag.reg { background: transparent; border: 1px solid var(--line); color: var(--muted); }
+.tag.stale { background: var(--notice); color: var(--notice-ink); }
+.past { opacity: .5; }
+.detail { font-size: 14px; color: var(--ink); display: grid; gap: 6px; padding-top: 8px; }
+.detail p { margin: 0; max-width: 60ch; }
+.detail a { color: var(--accent); font-weight: 700; }
+.detail .muted { color: var(--muted); }
+.rowbtn { all: unset; display: block; cursor: pointer; width: 100%; }
+.rowbtn:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; border-radius: 8px; }
+
+/* ---------- A: timeline (Gantt over the day) ---------- */
+.tl { position: relative; }
+.axis { display: grid; grid-template-columns: repeat(11, 1fr); font-size: 12px; color: var(--muted); font-variant-numeric: tabular-nums; border-bottom: 1px solid var(--line); padding-bottom: 4px; position: sticky; top: calc(env(safe-area-inset-top, 0px) + var(--headerH, 0px)); background: var(--bg); z-index: 2; }
+.axis span { border-left: 1px solid var(--line); padding-left: 3px; }
+.tl-rows { position: relative; }
+.tl-grid { position: absolute; inset: 0; display: grid; grid-template-columns: repeat(11, 1fr); pointer-events: none; }
+.tl-grid span { border-left: 1px dashed var(--line); }
+.nowline { position: absolute; top: 0; bottom: 0; width: 2px; background: var(--now); z-index: 1; pointer-events: none; }
+.nowline::before { content: "jetzt"; position: absolute; top: -18px; left: -12px; font-size: 11px; font-weight: 700; color: var(--now); }
+.tl-row { position: relative; padding-block: 8px; border-bottom: 1px solid var(--line); }
+.tl-row .head { display: flex; gap: 8px; align-items: baseline; min-width: 0; position: relative; z-index: 1; }
+.tl-row .time { font-family: var(--f-display); font-weight: 700; font-variant-numeric: tabular-nums; font-size: 14px; white-space: nowrap; }
+.tl-row .title { min-width: 0; overflow-wrap: anywhere; }
+.track { position: relative; height: 12px; margin-top: 6px; }
+.span { position: absolute; top: 0; height: 12px; border-radius: 6px; background: var(--cat); }
+.span.open { background: repeating-linear-gradient(135deg, var(--cat) 0 6px, color-mix(in srgb, var(--cat) 45%, transparent) 6px 12px); }
+.tl-row .meta { margin-top: 4px; }
+
+/* ---------- B: list ---------- */
+.list { display: grid; }
+.li { display: grid; grid-template-columns: 58px 12px 1fr; gap: 0 8px; padding-block: 10px; border-bottom: 1px solid var(--line); }
+.li .time { font-family: var(--f-display); font-weight: 700; font-variant-numeric: tabular-nums; line-height: 1.2; padding-top: 2px; }
+.li .time small { display: block; font-family: var(--f-body); font-weight: 400; font-size: 12px; color: var(--muted); }
+.li .body { min-width: 0; }
+
+/* ---------- C: cards ---------- */
+.cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 10px; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); padding: 12px; display: grid; gap: 6px; align-content: start; border-top: 4px solid var(--cat); }
+.card .time { font-family: var(--f-display); font-weight: 700; font-variant-numeric: tabular-nums; font-size: 18px; }
+
+.groupby { display: inline-flex; gap: 6px; align-items: center; font-size: 14px; color: var(--muted); }
+.groupby button { border: 1px solid var(--line); background: var(--surface); border-radius: 999px; padding: 4px 12px; cursor: pointer; font-size: 14px; }
+.groupby button[aria-pressed="true"] { border-color: var(--ink); font-weight: 700; color: var(--ink); }
+.controls { display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center; }
+.venuehead { display: flex; align-items: center; gap: 8px; padding-block: 14px 4px; border-bottom: 2px solid var(--ink); }
+.venuehead h3 { font-family: var(--f-display); font-size: 18px; margin: 0; flex: 1; min-width: 0; }
+.venuehead .meta { font-size: 13px; }
+.star { border: 0; background: transparent; cursor: pointer; font-size: 22px; line-height: 1; padding: 4px; color: var(--muted); }
+.star[aria-pressed="true"] { color: var(--c-play); }
+.vlink { all: unset; cursor: pointer; text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: 3px; }
+.vlink:hover { text-decoration-color: var(--accent); }
+.chip.venue { background: var(--ink); color: var(--bg); border-color: var(--ink); font-weight: 700; }
+.empty { background: var(--surface); border: 1px dashed var(--line); border-radius: var(--r); padding: 18px; color: var(--muted); }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: 13px; color: var(--muted); padding-top: 8px; }
+.legend i { display: inline-block; width: 18px; height: 8px; border-radius: 4px; vertical-align: middle; margin-right: 4px; background: var(--muted); }
+.legend i.open { background: repeating-linear-gradient(135deg, var(--muted) 0 4px, transparent 4px 8px); }
+@media (prefers-reduced-motion: no-preference) { .span { transition: left .2s, width .2s; } }
+</style>
+
+<div class="app">
+  <p class="mock-note"><b>Entwurf mit echten Daten</b> · Beispiel-Uhrzeit «jetzt»: Dienstag, 20. Oktober 2026, 10:15 · Kind: 9 Monate · ★ Meine Orte (Beispiel): GZ Heuried, PBZ Sihlcity, Indoor-Spielplatz Hardau, Kafi für Dich</p>
+
+  <header class="bar" id="bar">
+    <div class="brand">züri <span>kids</span></div>
+    <div class="daynav">
+      <button class="iconbtn" id="prev" aria-label="Vorheriger Tag">‹</button>
+      <h1 id="dayTitle">Dienstag</h1>
+      <button class="iconbtn" id="next" aria-label="Nächster Tag">›</button>
+    </div>
+    <div class="days" id="days" role="group" aria-label="Tag wählen"></div>
+    <div class="controls">
+      <div class="views" role="group" aria-label="Ansicht">
+        <button id="v-tl" aria-pressed="true">Zeitleiste</button>
+        <button id="v-list" aria-pressed="false">Liste</button>
+        <button id="v-cards" aria-pressed="false">Karten</button>
+      </div>
+      <div class="groupby" role="group" aria-label="Gruppieren">
+        <button id="g-time" aria-pressed="true">Nach Zeit</button>
+        <button id="g-venue" aria-pressed="false">Nach Ort</button>
+      </div>
+    </div>
+    <div class="chips" id="chips" role="group" aria-label="Filter"></div>
+  </header>
+
+  <div id="notices"></div>
+  <p class="summary" id="summary"></p>
+  <main id="main"></main>
+  <div class="legend" id="legend"></div>
+</div>
+
+<script>
+const DATA = __DATA__;
+const WD = ["Sonntag","Montag","Dienstag","Mittwoch","Donnerstag","Freitag","Samstag"];
+const WD2 = ["So","Mo","Di","Mi","Do","Fr","Sa"];
+const MON = ["Januar","Februar","März","April","Mai","Juni","Juli","August","September","Oktober","November","Dezember"];
+const CAT = { play:"Spiel", movement:"Bewegung", music:"Musik", crafts:"Werken", culture:"Kultur", meetup:"Treff", advice:"Beratung", "play-corner":"Spielecke", nature:"Natur", course:"Kurs", other:"Anderes" };
+const NOW = { date: "2026-10-20", min: 10 * 60 + 15 };
+const DAYS = ["2026-10-19","2026-10-20","2026-10-21","2026-10-22","2026-10-23","2026-10-24","2026-10-25"];
+const AXIS0 = 8 * 60, AXIS1 = 19 * 60;
+
+const state = { day: "2026-10-20", view: "tl", age: true, indoor: false, free: false, noreg: false, kreise: new Set([1,2,3,4,9]), open: null, group: "time", mine: false, venue: null,
+  favs: new Set(["gz-heuried", "pbz-sihlcity", "indoor-spielplatz-hardau", "kafi-fuer-dich"]) };
+try { const v = localStorage.getItem("zk-view"); if (v) state.view = v; const g = localStorage.getItem("zk-group"); if (g) state.group = g; const f = localStorage.getItem("zk-favs"); if (f) state.favs = new Set(JSON.parse(f)); } catch (e) {}
+const saveFavs = () => { try { localStorage.setItem("zk-favs", JSON.stringify([...state.favs])); } catch (e) {} };
+const vid = key => key.split("/")[0];
+
+const toMin = t => { const [h, m] = t.split(":").map(Number); return h * 60 + m; };
+const dateObj = d => { const [y, m, dd] = d.split("-").map(Number); return new Date(Date.UTC(y, m - 1, dd)); };
+const pct = m => Math.max(0, Math.min(100, (m - AXIS0) / (AXIS1 - AXIS0) * 100));
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;" }[c]));
+
+const FILTERS = [
+  { id: "age", label: "Passt für 9 Mt.", test: o => 9 >= o.min && 9 <= o.max },
+  { id: "indoor", label: "Drinnen", test: o => o.s !== "outdoor" },
+  { id: "free", label: "Gratis / Kollekte", test: o => o.pt === "free" || o.pt === "donation" },
+  { id: "noreg", label: "Ohne Anmeldung", test: o => o.r === "none" },
+];
+const KREISE = [...new Set(Object.values(DATA.offers).map(o => o.k))].sort((a, b) => a - b);
+
+function items() {
+  return DATA.occ
+    .filter(([, d]) => d === state.day)
+    .map(([key, d, s, e, open]) => ({ key, s, e, open: !!open, o: DATA.offers[key] }))
+    .filter(it => FILTERS.every(f => !state[f.id] || f.test(it.o)))
+    .filter(it => state.venue ? vid(it.key) === state.venue : state.kreise.has(it.o.k))
+    .filter(it => state.venue || !state.mine || state.favs.has(vid(it.key)))
+    .map(it => ({ ...it, past: state.day === NOW.date && toMin(it.e) <= NOW.min }));
+}
+
+function metaHtml(it) {
+  const o = it.o;
+  const venue = state.group === "venue" || state.venue ? "" : `<span class="vlink" role="link" tabindex="0" data-venue="${esc(vid(it.key))}">${esc(o.v)}</span><span class="k">K${o.k}</span>`;
+  return `<div class="meta">${venue}<span>${esc(o.p)}</span>` +
+    (o.s === "outdoor" ? `<span>draussen</span>` : "") +
+    (o.r === "required" ? `<span class="tag reg">Anmeldung</span>` : o.r === "unknown" ? `<span class="tag reg">Anmeldung?</span>` : "") +
+    (o.st ? `<span class="tag stale">evtl. veraltet</span>` : "") + `</div>`;
+}
+function ageLabel(o) {
+  if (o.min === 0 && o.max === 999) return "alle Altersstufen";
+  const f = m => m % 12 === 0 && m >= 24 ? `${m / 12} J.` : `${m} Mt.`;
+  if (o.max === 999) return `ab ${f(o.min)}`;
+  if (o.min === 0) return `bis ${f(o.max)}`;
+  return `${f(o.min)} – ${f(o.max)}`;
+}
+function detailHtml(it) {
+  const o = it.o;
+  return `<div class="detail">${o.d ? `<p>${esc(o.d)}</p>` : ""}` +
+    `<p class="muted">${esc(o.v)}, ${esc(o.a)} · ${ageLabel(o)} · ${o.s === "outdoor" ? "draussen" : o.s === "both" ? "drinnen & draussen" : "drinnen"} · ${esc(CAT[o.c] || o.c)}${o.pn ? " · " + esc(o.pn) : ""}</p>` +
+    `<p><a href="${esc(o.u)}" target="_blank" rel="noopener">Zur Website ↗</a></p></div>`;
+}
+const uid = it => it.key + "@" + it.s;
+const isOpen = it => state.open === uid(it);
+const catStyle = o => `--cat: var(--c-${o.c})`;
+const timeLabel = it => it.open ? `${it.s}–${it.e}` : it.s;
+
+function byVenue(list) {
+  const m = new Map();
+  for (const it of list) { const id = vid(it.key); if (!m.has(id)) m.set(id, []); m.get(id).push(it); }
+  // favourites first, then by earliest start
+  return [...m].sort((a, b) => (state.favs.has(b[0]) - state.favs.has(a[0])) || (a[1][0].s < b[1][0].s ? -1 : 1));
+}
+function venueHead(id, arr) {
+  const o = arr[0].o;
+  return `<div class="venuehead"><h3><span class="vlink" role="link" tabindex="0" data-venue="${esc(id)}">${esc(o.v)}</span></h3>` +
+    `<span class="meta"><span class="k">K${o.k}</span><span>${arr.length} ${arr.length === 1 ? "Angebot" : "Angebote"}</span></span>` +
+    `<button class="star" data-star="${esc(id)}" aria-pressed="${state.favs.has(id)}" aria-label="${state.favs.has(id) ? "Aus Meine Orte entfernen" : "Zu Meine Orte hinzufügen"}">${state.favs.has(id) ? "★" : "☆"}</button></div>`;
+}
+function renderTimeline(list) {
+  const hours = Array.from({ length: 11 }, (_, i) => `<span>${String(8 + i).padStart(2, "0")}</span>`).join("");
+  const now = state.day === NOW.date ? `<div class="nowline" style="left:${pct(NOW.min)}%"></div>` : "";
+  const rowsHtml = arr => arr.map(it => `
+    <div class="tl-row ${it.past ? "past" : ""}" style="${catStyle(it.o)}">
+      <button class="rowbtn" data-uid="${esc(uid(it))}" aria-expanded="${isOpen(it)}">
+        <div class="head"><span class="time">${it.s}–${it.e}</span><span class="title">${esc(it.o.t)}</span></div>
+        <div class="track"><div class="span ${it.open ? "open" : ""}" style="left:${pct(toMin(it.s))}%;width:${Math.max(1.5, pct(toMin(it.e)) - pct(toMin(it.s)))}%"></div></div>
+        ${metaHtml(it)}
+      </button>
+      ${isOpen(it) ? detailHtml(it) : ""}
+    </div>`).join("");
+  const body = state.group === "venue"
+    ? byVenue(list).map(([id, arr]) => venueHead(id, arr) + `<div class="tl-rows"><div class="tl-grid">${"<span></span>".repeat(11)}</div>${now}${rowsHtml(arr)}</div>`).join("")
+    : `<div class="tl-rows"><div class="tl-grid">${"<span></span>".repeat(11)}</div>${now}${rowsHtml(list)}</div>`;
+  return `<div class="tl"><div class="axis">${hours}</div>${body}</div>`;
+}
+
+function listRow(it) {
+  return `<div class="li ${it.past ? "past" : ""}" style="${catStyle(it.o)}">
+    <div class="time">${it.s}<small>bis ${it.e}</small></div><span class="dot"></span>
+    <div class="body"><button class="rowbtn" data-uid="${esc(uid(it))}" aria-expanded="${isOpen(it)}"><div class="title">${esc(it.o.t)}</div>${metaHtml(it)}</button>${isOpen(it) ? detailHtml(it) : ""}</div>
+  </div>`;
+}
+function renderList(list) {
+  if (state.group === "venue") return byVenue(list).map(([id, arr]) => venueHead(id, arr) + `<div class="list">${arr.map(listRow).join("")}</div>`).join("");
+  const order = arr => [...arr.filter(i => !i.past), ...arr.filter(i => i.past)];
+  const groups = [
+    ["Vormittag", list.filter(i => !i.open && toMin(i.s) < 720)],
+    ["Nachmittag", list.filter(i => !i.open && toMin(i.s) >= 720)],
+    ["Offen – kommen und gehen", list.filter(i => i.open)],
+  ].filter(([, a]) => a.length);
+  return groups.map(([h, a]) => `<section class="group"><h2>${h}</h2><div class="list">${order(a).map(listRow).join("")}</div></section>`).join("");
+}
+function renderCards(list) {
+  if (state.group === "venue") return byVenue(list).map(([id, arr]) => venueHead(id, arr) + cardsHtml(arr)).join("");
+  return cardsHtml(list);
+}
+function cardsHtml(list) {
+  return `<div class="cards">${list.map(it => `
+    <div class="card ${it.past ? "past" : ""}" style="${catStyle(it.o)}">
+      <div class="time">${timeLabel(it)}${it.open ? "" : `<span class="meta" style="display:inline"> bis ${it.e}</span>`}</div>
+      <button class="rowbtn" data-uid="${esc(uid(it))}" aria-expanded="${isOpen(it)}"><div class="title">${esc(it.o.t)}</div>${metaHtml(it)}</button>
+      ${isOpen(it) ? detailHtml(it) : ""}
+    </div>`).join("")}</div>`;
+}
+
+function renderChrome() {
+  const d = dateObj(state.day), i = DAYS.indexOf(state.day);
+  document.getElementById("dayTitle").innerHTML = `${state.day === NOW.date ? "Heute, " : ""}${WD[d.getUTCDay()]}<small>${d.getUTCDate()}. ${MON[d.getUTCMonth()]} 2026</small>`;
+  document.getElementById("prev").disabled = i === 0;
+  document.getElementById("next").disabled = i === DAYS.length - 1;
+  document.getElementById("days").innerHTML = DAYS.map(x => { const o = dateObj(x); return `<button data-day="${x}" aria-pressed="${x === state.day}">${WD2[o.getUTCDay()]}<b>${o.getUTCDate()}</b></button>`; }).join("");
+  for (const v of ["tl","list","cards"]) document.getElementById("v-" + v).setAttribute("aria-pressed", state.view === v);
+  for (const g of ["time","venue"]) document.getElementById("g-" + g).setAttribute("aria-pressed", state.group === g);
+  const vname = state.venue ? Object.entries(DATA.offers).find(([k]) => vid(k) === state.venue)[1].v : "";
+  document.getElementById("chips").innerHTML =
+    (state.venue ? `<button class="chip venue" data-clearvenue="1" aria-label="Filter ${esc(vname)} entfernen">${esc(vname)} ✕</button>` : "") +
+    `<button class="chip" data-mine="1" aria-pressed="${state.mine}">★ Meine Orte</button>` +
+    FILTERS.map(f => `<button class="chip" data-f="${f.id}" aria-pressed="${state[f.id]}">${f.label}</button>`).join("") +
+    `<span class="sep" aria-hidden="true"></span>` +
+    KREISE.map(k => `<button class="chip kreis" data-k="${k}" aria-pressed="${state.kreise.has(k)}">K${k}</button>`).join("");
+}
+
+function render() {
+  renderChrome();
+  const list = items();
+  const all = DATA.occ.filter(([, d]) => d === state.day).length;
+  document.getElementById("summary").textContent = state.venue ? `${list.length} Angebote an diesem Ort · auf einen anderen Ort tippen oder ✕ für alle` : `${list.length} von ${all} Angeboten passen zu deinen Filtern`;
+  document.getElementById("notices").innerHTML = "";
+  const main = document.getElementById("main");
+  if (!list.length) {
+    const active = FILTERS.filter(f => state[f.id]).map(f => "«" + f.label + "»");
+    main.innerHTML = `<div class="empty">Keine passenden Angebote an diesem Tag. ${active.length ? "Versuch es ohne " + active.join(", ") + " oder mit mehr Kreisen." : "Wähl mehr Kreise aus."}</div>`;
+  } else {
+    main.innerHTML = state.view === "tl" ? renderTimeline(list) : state.view === "list" ? renderList(list) : renderCards(list);
+  }
+  document.getElementById("legend").innerHTML = state.view === "tl"
+    ? `<span><i></i>Termin mit fixer Zeit</span><span><i class="open"></i>Offen – kommen und gehen</span>` : "";
+  document.documentElement.style.setProperty("--headerH", document.getElementById("bar").offsetHeight + "px");
+}
+
+document.addEventListener("click", e => {
+  const v = e.target.closest("[data-venue]");
+  if (v) { e.stopPropagation(); state.venue = v.dataset.venue; state.open = null; render(); window.scrollTo({ top: 0 }); return; }
+  const t = e.target.closest("button"); if (!t) return;
+  if (t.id === "prev" || t.id === "next") { const i = DAYS.indexOf(state.day) + (t.id === "prev" ? -1 : 1); if (DAYS[i]) { state.day = DAYS[i]; state.open = null; } }
+  else if (t.dataset.day) { state.day = t.dataset.day; state.open = null; }
+  else if (t.id && t.id.startsWith("v-")) { state.view = t.id.slice(2); try { localStorage.setItem("zk-view", state.view); } catch (err) {} }
+  else if (t.dataset.f) state[t.dataset.f] = !state[t.dataset.f];
+  else if (t.dataset.k) { const k = Number(t.dataset.k); state.kreise.has(k) ? state.kreise.delete(k) : state.kreise.add(k); }
+  else if (t.id && t.id.startsWith("g-")) { state.group = t.id.slice(2); try { localStorage.setItem("zk-group", state.group); } catch (err) {} }
+  else if (t.dataset.mine) state.mine = !state.mine;
+  else if (t.dataset.clearvenue) state.venue = null;
+  else if (t.dataset.star) { const id = t.dataset.star; state.favs.has(id) ? state.favs.delete(id) : state.favs.add(id); saveFavs(); }
+  else if (t.dataset.uid) state.open = state.open === t.dataset.uid ? null : t.dataset.uid;
+  else return;
+  render();
+});
+document.addEventListener("keydown", e => { const v = e.target.closest && e.target.closest("[data-venue]"); if (v && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); v.click(); } });
+window.addEventListener("resize", () => document.documentElement.style.setProperty("--headerH", document.getElementById("bar").offsetHeight + "px"));
+render();
+</script>

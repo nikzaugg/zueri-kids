@@ -35,8 +35,8 @@ research tool that keeps it up to date.
 
 - **Language:** code, comments, commands, specs and commit messages in English.
   The web app UI is German; all UI strings live in one message file.
-- **Stack:** TypeScript, Node 22 LTS, npm workspaces, Zod, Vitest, Astro,
-  Playwright.
+- **Stack:** TypeScript, Node 22 LTS, npm workspaces, Zod, Vitest, Astro with
+  Preact islands, Playwright.
 - **Time zone:** all dates and times in the data are Europe/Zurich wall-clock
   values.
 
@@ -92,7 +92,7 @@ apps/web/          Astro web app
 
 ## Out of scope for v1
 
-Map view, user accounts, favourites, notifications, multiple children,
+Map view, user accounts, notifications, multiple children,
 languages other than German in the UI, venues outside the canton of Zurich,
 offers in languages other than German/English (idea for publishing: an
 offer `language` field with a language filter).
