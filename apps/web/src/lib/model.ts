@@ -42,10 +42,13 @@ const normalize = (s: string) => s.normalize("NFD").replace(/\p{Diacritic}/gu, "
 const cmp = (a: string, b: string) => (a < b ? -1 : a > b ? 1 : 0);
 
 // REQ-WEB-030
-export function searchOffers(b: Bundle, query: string, today: string) {
+export function searchOffers(b: Bundle, query: string, today: string, nowMinutes = 0) {
   const q = normalize(query.trim());
   const next = new Map<string, Occurrence>();
-  for (const o of occurrences(b.venues, b.holidays, today, addDays(today, 28))) if (!next.has(o.key)) next.set(o.key, o);
+  for (const o of occurrences(b.venues, b.holidays, today, addDays(today, 28))) {
+    const upcoming = o.date > today || toMinutes(o.end) > nowMinutes;
+    if (upcoming && !next.has(o.key)) next.set(o.key, o);
+  }
   return b.venues
     .flatMap((venue) =>
       venue.offers

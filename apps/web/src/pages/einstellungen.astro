@@ -1,0 +1,6 @@
+---
+import Base from "../layouts/Base.astro";
+import SettingsApp from "../components/SettingsApp";
+import { de } from "../i18n/de";
+---
+<Base title={de.pageTitles.settings} active="settings"><h1 class="page-title">{de.pageTitles.settings}</h1><SettingsApp client:only="preact" /></Base>

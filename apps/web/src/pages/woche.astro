@@ -1,0 +1,6 @@
+---
+import Base from "../layouts/Base.astro";
+import WeekApp from "../components/WeekApp";
+import { de } from "../i18n/de";
+---
+<Base title={de.pageTitles.week} active="week" wide><WeekApp client:only="preact" /></Base>

@@ -76,4 +76,9 @@ describe("model", () => {
     const [first] = searchOffers(bundle, "zurich", tuesday);
     expect(first.next).toMatchObject({ date: tuesday });
   });
+
+  it("REQ-WEB-030: skips today's occurrences that have already ended", () => {
+    const [atNoon] = searchOffers(bundle, "rossli", tuesday, 12 * 60);
+    expect(atNoon.next).toMatchObject({ date: "2026-10-27" });
+  });
 });

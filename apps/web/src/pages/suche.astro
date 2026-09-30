@@ -1,0 +1,6 @@
+---
+import Base from "../layouts/Base.astro";
+import SearchApp from "../components/SearchApp";
+import { de } from "../i18n/de";
+---
+<Base title={de.pageTitles.search} active="search"><h1 class="page-title">{de.pageTitles.search}</h1><SearchApp client:only="preact" /></Base>
