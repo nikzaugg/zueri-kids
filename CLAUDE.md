@@ -16,3 +16,6 @@ Start with `docs/specs/000-overview.md`.
 - Data changes: run `npm run validate`. Never guess data — use `unknown` and
   cite a `source.url` (see `docs/specs/020-research-tool.md`).
 - Do not commit on behalf of the user during research commands.
+- Prefer established, maintained libraries and tools over writing
+  infrastructure yourself (e.g. Workbox for the service worker). Custom code
+  is for project-specific logic only.
