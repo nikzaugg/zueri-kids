@@ -161,3 +161,9 @@ fieldset { border: 1px solid var(--line); border-radius: var(--r); padding: 12px
 .weekday a.title { color: var(--ink); text-decoration: none; font-weight: 700; }
 .weekday a.title:hover { text-decoration: underline; text-decoration-color: var(--line); }
 .weekday .time { font-family: var(--f-display); }
+
+/* REQ-WEB-079: with viewport-fit=cover the page reaches under the iPhone status
+   bar. Cover that strip on every page and start content below it; the sticky
+   headers already stick at the inset. The inset is 0 on devices without one. */
+body::before { content: ""; position: fixed; top: 0; left: 0; right: 0; height: env(safe-area-inset-top, 0px); background: var(--bg); z-index: 20; pointer-events: none; }
+.app { padding-top: env(safe-area-inset-top, 0px); }

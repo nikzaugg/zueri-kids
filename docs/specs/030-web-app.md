@@ -168,6 +168,9 @@ https://claude.ai/artifact/6Qa7n7Rz3PRmAinraTL9My
   the cached copy offline), so new data is visible on the next app start.
   (manual)
 - **REQ-WEB-071:** Layout works from 360px width without horizontal scrolling.
+- **REQ-WEB-079:** Page content never shows behind the phone's status bar:
+  the top safe-area inset is covered with the page background on every page,
+  and content starts below it. (manual)
 - **REQ-WEB-072:** All UI strings live in one German message file
   (`apps/web/src/i18n/de.ts`). (manual)
 - **REQ-WEB-073:** Basic accessibility: semantic HTML, labelled controls,
