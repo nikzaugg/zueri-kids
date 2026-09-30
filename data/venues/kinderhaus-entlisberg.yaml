@@ -1,0 +1,29 @@
+id: kinderhaus-entlisberg
+name: Kinderhaus Entlisberg
+type: other
+location:
+  address: Butzenstrasse 49, 8038 Zürich
+  municipality: Zürich
+  kreis: 2
+website: https://www.fadenspule.ch/
+offers:
+  - id: fadenspule
+    title: Fadenspule
+    description: >-
+      Spiel- und Begegnungsort für kleine Kinder (Geburt bis Kindergarten)
+      und ihre Begleitpersonen. Ein interdisziplinäres Fachteam hört zu,
+      spielt mit und sucht bei Schwierigkeiten gemeinsam nach Lösungen.
+    category: meetup
+    ageMonths: { max: 48 }
+    setting: indoor
+    price: { type: donation, note: "gratis, Spenden erwünscht" }
+    registration: unknown
+    schedule:
+      type: openingHours
+      rules:
+        - { days: [tue], start: "09:00", end: "12:00" }
+      pausesDuringSchoolHolidays: true
+      pausesOnPublicHolidays: true
+    url: https://www.fadenspule.ch/
+    notes: Only for families living in the city of Zurich. Free with donations welcome (user, 2026-09-30). Listed as autumn opening hours ("Öffnungszeiten im Herbst").
+    source: { url: "https://www.fadenspule.ch/standorte", lastVerified: 2026-09-30, by: ai }

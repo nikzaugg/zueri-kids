@@ -1,0 +1,37 @@
+id: kids-playland-letzipark
+name: Kids Playland Letzipark
+type: indoor-playground
+location:
+  address: Hohlstrasse 461, 8048 Zürich
+  municipality: Zürich
+  kreis: 9
+website: https://kidsplayland.ch/
+amenities:
+  stroller: unknown
+  changingTable: unknown
+  cafe: unknown
+notes: In the Letzipark shopping centre; 3 hours free parking in the Letzipark car park.
+offers:
+  - id: indoor-spielplatz
+    title: Kids Playland (Indoor-Spielplatz)
+    description: >-
+      Indoor-Spielparadies im Letzipark mit Softplay, Kletterlandschaft,
+      Bällebad und Spielbereichen; Kinder bis 6 nur in Begleitung.
+    category: play
+    ageMonths: { max: 132 }
+    setting: indoor
+    price: { type: range, minChf: 0, maxChf: 25, note: "Babys gratis; Krabbelalter CHF 10 (2 Std.) / 15 (Tag); Laufalter CHF 18 / 25; Erwachsene CHF 5" }
+    registration: none
+    schedule:
+      type: openingHours
+      rules:
+        - { days: [mon, tue, wed, thu, fri, sat], start: "10:00", end: "18:30" }
+        - { days: [sun], start: "10:30", end: "18:30" }
+      pausesDuringSchoolHolidays: false
+      pausesOnPublicHolidays: false
+    url: https://kidsplayland.ch/
+    notes: >-
+      Website says it targets children 1–10 but lists prices for crawling
+      toddlers and free entry for babies. Public holidays: Sunday hours.
+      Hours may vary – website refers to Google Business for current times.
+    source: { url: "https://kidsplayland.ch/", lastVerified: 2026-09-30, by: ai }

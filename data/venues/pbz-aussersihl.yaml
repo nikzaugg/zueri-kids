@@ -1,0 +1,68 @@
+id: pbz-aussersihl
+name: PBZ Aussersihl
+type: library
+location:
+  address: Zweierstrasse 50, 8004 Zürich
+  municipality: Zürich
+  kreis: 4
+website: https://www.pbz.ch/location/aussersihl/
+amenities:
+  stroller: yes
+  changingTable: yes
+  cafe: no
+notes: Wheelchair accessible (used as stroller access).
+offers:
+  - id: kinderecke
+    title: Kinderbücher in der Bibliothek
+    description: Bilderbücher anschauen und ausleihen, Kinder-Medien inkl. Tonies.
+    category: culture
+    ageMonths: {}
+    setting: indoor
+    price: { type: free }
+    registration: none
+    schedule:
+      type: openingHours
+      rules:
+        - { days: [tue, wed, thu, fri], start: "12:00", end: "19:00" }
+        - { days: [sat], start: "10:00", end: "14:00" }
+      pausesDuringSchoolHolidays: false
+      pausesOnPublicHolidays: true
+    url: https://www.pbz.ch/location/aussersihl/
+    notes: Staffed opening hours; borrowing needs a PBZ card.
+    source: { url: "https://www.pbz.ch/location/aussersihl/", lastVerified: 2026-09-30, by: ai }
+
+  - id: ryte-ryte-roessli
+    title: Ryte, ryte Rössli
+    description: Kniereime und Fingerspiele für Eltern mit Kleinkindern.
+    category: music
+    ageMonths: { min: 9, max: 24 }
+    setting: indoor
+    price: { type: donation, note: "Eintritt frei, Kollekte" }
+    registration: none
+    schedule:
+      type: dates
+      dates:
+        - { date: 2026-10-31, start: "10:15", end: "11:00" }
+        - { date: 2027-01-30, start: "10:15", end: "11:00" }
+        - { date: 2027-03-20, start: "10:15", end: "11:00" }
+    url: https://www.pbz.ch/event/ryte-ryte-roessli-26-27-13/
+    notes: PBZ KinderTREFF series 2026/27. Not for groups (Krippen, Horte, Spielgruppen).
+    source: { url: "https://www.pbz.ch/event/ryte-ryte-roessli-26-27-13/", lastVerified: 2026-09-30, by: ai }
+
+  - id: geschichtenzeit
+    title: Geschichtenzeit
+    description: Gemeinsam Geschichten erleben – für Eltern mit Kindern von 2 bis 3 Jahren.
+    category: culture
+    ageMonths: { min: 24, max: 36 }
+    setting: indoor
+    price: { type: donation, note: "Eintritt frei, Kollekte" }
+    registration: none
+    schedule:
+      type: dates
+      dates:
+        - { date: 2026-11-28, start: "10:15", end: "11:00" }
+        - { date: 2027-02-27, start: "10:15", end: "11:00" }
+        - { date: 2027-04-24, start: "10:15", end: "11:00" }
+    url: https://www.pbz.ch/event/geschichtenzeit-26-27-19/
+    notes: PBZ KinderTREFF series 2026/27. Registration only needed for groups.
+    source: { url: "https://www.pbz.ch/event/geschichtenzeit-26-27-19/", lastVerified: 2026-09-30, by: ai }

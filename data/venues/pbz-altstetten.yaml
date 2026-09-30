@@ -1,0 +1,50 @@
+id: pbz-altstetten
+name: PBZ Altstetten
+type: library
+location:
+  address: Lindenplatz 4, 8048 Zürich
+  municipality: Zürich
+  kreis: 9
+website: https://www.pbz.ch/location/altstetten/
+amenities:
+  stroller: yes
+  changingTable: yes
+  cafe: no
+notes: Closed for renovation from 24 Aug until approx. 11 Dec 2026; opening hours after reopening not yet known.
+offers:
+  - id: ryte-ryte-roessli
+    title: Ryte, ryte Rössli
+    description: Kniereime und Fingerspiele für Eltern mit Kleinkindern.
+    category: music
+    ageMonths: { min: 9, max: 24 }
+    setting: indoor
+    price: { type: donation, note: "Eintritt frei, Kollekte" }
+    registration: none
+    schedule:
+      type: dates
+      dates:
+        - { date: 2027-01-07, start: "10:00", end: "10:45" }
+        - { date: 2027-02-11, start: "10:00", end: "10:45" }
+        - { date: 2027-03-25, start: "10:00", end: "10:45" }
+        - { date: 2027-04-01, start: "10:00", end: "10:45" }
+    url: https://www.pbz.ch/event/ryte-ryte-roessli-26-27-23/
+    notes: PBZ KinderTREFF series 2026/27. Not for groups (Krippen, Horte, Spielgruppen).
+    source: { url: "https://www.pbz.ch/event/ryte-ryte-roessli-26-27-23/", lastVerified: 2026-09-30, by: ai }
+
+  - id: geschichtenzeit
+    title: Geschichtenzeit
+    description: Gemeinsam Geschichten erleben – für Eltern mit Kindern von 2 bis 3 Jahren.
+    category: culture
+    ageMonths: { min: 24, max: 36 }
+    setting: indoor
+    price: { type: donation, note: "Eintritt frei, Kollekte" }
+    registration: none
+    schedule:
+      type: dates
+      dates:
+        - { date: 2027-01-28, start: "10:00", end: "10:45" }
+        - { date: 2027-03-11, start: "10:00", end: "10:45" }
+        - { date: 2027-04-08, start: "10:00", end: "10:45" }
+    url: https://www.pbz.ch/event/geschichtenzeit-26-27-30/
+    notes: PBZ KinderTREFF series 2026/27. Registration only needed for groups.
+    source: { url: "https://www.pbz.ch/event/geschichtenzeit-26-27-30/", lastVerified: 2026-09-30, by: ai }

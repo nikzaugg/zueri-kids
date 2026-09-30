@@ -1,0 +1,30 @@
+id: fadenspule-megamarie
+name: Fadenspule – MegaMarie
+type: other
+location:
+  address: Schiffbaustrasse 9b/9c, 8005 Zürich
+  municipality: Zürich
+  kreis: 5
+website: https://www.fadenspule.ch/
+offers:
+  - id: fadenspule
+    title: Fadenspule
+    description: >-
+      Spiel- und Begegnungsort für kleine Kinder (Geburt bis Kindergarten)
+      und ihre Begleitpersonen. Ein interdisziplinäres Fachteam hört zu,
+      spielt mit und sucht bei Schwierigkeiten gemeinsam nach Lösungen.
+    category: meetup
+    ageMonths: { max: 48 }
+    setting: indoor
+    price: { type: donation, note: "gratis, Spenden erwünscht" }
+    registration: unknown
+    schedule:
+      type: openingHours
+      rules:
+        - { days: [mon], start: "09:00", end: "12:00" }
+        - { days: [thu], start: "14:30", end: "17:30" }
+      pausesDuringSchoolHolidays: true
+      pausesOnPublicHolidays: true
+    url: https://www.fadenspule.ch/
+    notes: Only for families living in the city of Zurich. Free with donations welcome (user, 2026-09-30). Listed as autumn opening hours ("Öffnungszeiten im Herbst").
+    source: { url: "https://www.fadenspule.ch/standorte", lastVerified: 2026-09-30, by: ai }
