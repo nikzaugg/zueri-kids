@@ -1,0 +1,153 @@
+id: gz-heuried
+name: GZ Heuried
+type: community-centre
+location:
+  address: Döltschiweg 130, 8055 Zürich
+  municipality: Zürich
+  kreis: 3
+website: https://gz-zh.ch/gz-heuried/
+amenities:
+  stroller: yes
+  changingTable: unknown
+  cafe: yes
+notes: >-
+  Kaffeebar im Atrium only on Thursday mornings 09:00–11:30 (closed in school
+  holidays). Changing table probably available (user, not confirmed).
+offers:
+  - id: rollender-donnerstag
+    title: Rollender Donnerstag
+    description: >-
+      Freies Spiel mit Rollgeräten im Atrium für bewegungsfreudige Kinder.
+      Nicht betreut – Eltern sind verantwortlich.
+    category: play
+    ageMonths: { min: 0, max: 72 }
+    setting: indoor
+    price: { type: free }
+    registration: none
+    schedule:
+      type: openingHours
+      rules:
+        - { days: [thu], start: "09:00", end: "11:30" }
+      pausesDuringSchoolHolidays: true
+      pausesOnPublicHolidays: true
+    url: https://gz-zh.ch/gz-heuried/angebote/rollender-donnerstag/
+    source: { url: "https://gz-zh.ch/gz-heuried/angebote/rollender-donnerstag/", lastVerified: 2026-09-30, by: ai }
+
+  - id: rollender-freitag
+    title: Rollender Freitag
+    description: >-
+      Freies Spiel mit Rollgeräten im Atrium für bewegungsfreudige Kinder.
+      Nicht betreut – Eltern sind verantwortlich. Nur Oktober bis April.
+    category: play
+    ageMonths: { min: 0, max: 72 }
+    setting: indoor
+    price: { type: free }
+    registration: none
+    schedule:
+      type: openingHours
+      rules:
+        - { days: [fri], start: "09:30", end: "11:30" }
+      validFrom: 2026-10-01
+      validUntil: 2027-04-30
+      pausesDuringSchoolHolidays: true
+      pausesOnPublicHolidays: true
+    url: https://gz-zh.ch/gz-heuried/angebote/rollender-freitag/
+    source: { url: "https://gz-zh.ch/gz-heuried/angebote/rollender-freitag/", lastVerified: 2026-09-30, by: ai }
+
+  - id: offenes-spielzimmer
+    title: Offenes Spielzimmer
+    description: >-
+      Heller Spielraum mit Ausgang in den Erlebnisgarten, zur selbst
+      organisierten Nutzung für Kleinkinder in Begleitung Erwachsener.
+    category: play
+    ageMonths: {}
+    setting: indoor
+    price: { type: fixed, chf: 3, note: "pro Besuch, TWINT vor Ort" }
+    registration: none
+    schedule:
+      type: openingHours
+      rules:
+        - { days: [tue, wed], start: "14:00", end: "17:30" }
+      pausesDuringSchoolHolidays: true
+      pausesOnPublicHolidays: true
+    url: https://gz-zh.ch/gz-heuried/angebote/spielzimmer-sucht-neugierige-kinder-in-begleitung-erwachsener/
+    notes: Key in the key safe in front of the room; ask the cafeteria for the code.
+    source: { url: "https://gz-zh.ch/gz-heuried/angebote/spielzimmer-sucht-neugierige-kinder-in-begleitung-erwachsener/", lastVerified: 2026-09-30, by: ai }
+
+  - id: music-together
+    title: Music Together
+    description: >-
+      Musik- und Bewegungsprogramm für Kinder mit Eltern oder
+      Betreuungspersonen: singen, tanzen, musizieren. Auf Englisch.
+    category: music
+    ageMonths: { min: 0, max: 48 }
+    setting: indoor
+    price: { type: fixed, chf: 350, note: "10-Wochen-Kurs inkl. Liederbuch und App" }
+    registration: required
+    schedule:
+      type: weekly
+      rules:
+        - { days: [thu], start: "09:30", end: "10:30" }
+        - { days: [thu], start: "10:30", end: "11:30" }
+      pausesDuringSchoolHolidays: true
+      pausesOnPublicHolidays: true
+    url: https://gz-zh.ch/gz-heuried/angebote/music-together/
+    notes: Two courses (start 09:30 and 10:30). Registration via Music Together Zurich.
+    source: { url: "https://gz-zh.ch/gz-heuried/angebote/music-together/", lastVerified: 2026-09-30, by: ai }
+
+  - id: kindertanzen-vor-kiga
+    title: Kindertanzen Vor-KiGa (ab 3 J)
+    description: Moderner Kindertanz, spielerisch mit Bildern, Versen und Geschichten.
+    category: movement
+    ageMonths: { min: 36 }
+    setting: indoor
+    price: { type: fixed, chf: 18, note: "pro Lektion, Anmeldung semesterweise; Schnupperlektion CHF 10" }
+    registration: required
+    schedule:
+      type: weekly
+      rules:
+        - { days: [thu], start: "14:00", end: "14:50" }
+      pausesDuringSchoolHolidays: true
+      pausesOnPublicHolidays: true
+    url: https://gz-zh.ch/gz-heuried/angebote/kreativer-kindertanz-fuer-3-4-jaehrige-kinder-2/
+    notes: "Registration with Etienne Beck, tel. 078 751 54 94."
+    source: { url: "https://gz-zh.ch/gz-heuried/angebote/kreativer-kindertanz-fuer-3-4-jaehrige-kinder-2/", lastVerified: 2026-09-30, by: ai }
+
+  - id: kinderbibliothek
+    title: Schul- und Kinderbibliothek
+    description: Bücher, Hörspiele und Medien für Kinder und Familien zum Stöbern, Lesen und Ausleihen.
+    category: culture
+    ageMonths: {}
+    setting: indoor
+    price: { type: unknown }
+    registration: unknown
+    schedule:
+      type: openingHours
+      rules:
+        - { days: [tue, wed, thu], start: "14:30", end: "17:30" }
+      pausesDuringSchoolHolidays: true
+      pausesOnPublicHolidays: true
+    url: https://gz-zh.ch/gz-heuried/angebote/9683-2/
+    notes: Borrowing needs a signed membership form (see skbheuried.ch).
+    source: { url: "https://gz-zh.ch/gz-heuried/angebote/9683-2/", lastVerified: 2026-09-30, by: ai }
+
+  - id: familienberatung
+    title: Familienberatung
+    description: >-
+      Beratung der Stadt Zürich zu Ernährung, Erziehung, Pflege, Schlaf und
+      Kinderbetreuung – persönlich, vertraulich, in verschiedenen Sprachen.
+      Auch zum Austausch bei Tee/Kaffee und zum Spielen für die Kinder.
+    category: advice
+    ageMonths: {}
+    setting: indoor
+    price: { type: free }
+    registration: none
+    schedule:
+      type: openingHours
+      rules:
+        - { days: [thu], start: "09:00", end: "12:00" }
+      pausesDuringSchoolHolidays: false
+      pausesOnPublicHolidays: true
+    url: https://gz-zh.ch/gz-heuried/angebote/familienberatung/
+    notes: "Walk-in or with appointment (online booking via Stadt Zürich). Familienberatung tel. 044 412 76 00."
+    source: { url: "https://gz-zh.ch/gz-heuried/angebote/familienberatung/", lastVerified: 2026-09-30, by: ai }

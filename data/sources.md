@@ -8,6 +8,15 @@ Consult these first in `/research` and `/discover`.
 - Kanton Zürich – Angebote für Familien mit Babys und Kleinkindern: https://www.zh.ch/de/familie/angebote-fuer-familien-mit-kindern/familienleben-baby-kleinkind/uebersicht-alltags-und-freizeitangebote-familien-mit-kindern/deutsch.html
 
 ## Zürcher Gemeinschaftszentren (https://gz-zh.ch/)
+Research hints:
+- Stroller access: all GZ are accessible with a stroller or have stroller
+  parking → `amenities.stroller: yes` (user knowledge, 2026-09-30).
+- Changing table: probably available in all GZ but not confirmed → keep
+  `unknown` unless the GZ page says so.
+- Program pages (`/<gz>/programm/`) list only the next few days; offer
+  detail pages are `/<gz>/angebote/<slug>/`.
+- The city's Familienberatung is held in several GZ (category `advice`).
+
 Affoltern, Bachwiesen, Buchegg, Grünau, Heuried, Hirzenbach, Höngg,
 Hottingen, Leimbach, Loogarten, Oerlikon, Riesbach, Schindlergut, Seebach,
 Wipkingen, Witikon, Wollishofen
