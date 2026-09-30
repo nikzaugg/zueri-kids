@@ -1863,7 +1863,8 @@ Implements REQ-DATA-040/041 (content), REQ-RES-001…040 (all manual).
 
 Holiday ranges are Monday–Sunday of the official holiday weeks of the
 Volksschule Stadt Zürich (weeks per stadt-zuerich.ch: Sport 7–8,
-Frühling 17–18, Sommer 29–33, Herbst 41–42).
+Frühling 17–18, or 16–17 if Easter Monday falls in week 16; Sommer 29–33,
+Herbst 41–42).
 
 ```yaml
 # Volksschule Stadt Zürich. Ranges are Monday–Sunday of the holiday weeks.
@@ -1879,7 +1880,8 @@ schoolHolidays:
   - { name: Herbstferien, from: 2027-10-11, to: 2027-10-24 }
   - { name: Weihnachtsferien, from: 2027-12-20, to: 2028-01-02 }
   - { name: Sportferien, from: 2028-02-14, to: 2028-02-27 }
-  - { name: Frühlingsferien, from: 2028-04-24, to: 2028-05-07 }
+  # Easter Monday 2028-04-17 is in week 16, so weeks 16–17
+  - { name: Frühlingsferien, from: 2028-04-17, to: 2028-04-30 }
   - { name: Sommerferien, from: 2028-07-17, to: 2028-08-20 }
   - { name: Herbstferien, from: 2028-10-09, to: 2028-10-22 }
 

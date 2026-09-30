@@ -1,0 +1,45 @@
+# Volksschule Stadt Zürich. Ranges are Monday–Sunday of the holiday weeks
+# (ISO week numbers): Sport 7–8, Frühling 17–18 (16–17 if Easter Monday falls
+# in week 16), Sommer 29–33, Herbst 41–42; Christmas from the Monday after
+# the last school day.
+# Sources:
+#   https://www.stadt-zuerich.ch/de/bildung/volksschule/schulferien.html
+#   https://www.zh.ch/de/bildung/bildungssystem/schulferien.html
+schoolHolidays:
+  - { name: Herbstferien, from: 2026-10-05, to: 2026-10-18 }
+  - { name: Weihnachtsferien, from: 2026-12-21, to: 2027-01-03 }
+  - { name: Sportferien, from: 2027-02-15, to: 2027-02-28 }
+  - { name: Frühlingsferien, from: 2027-04-26, to: 2027-05-09 }
+  - { name: Sommerferien, from: 2027-07-19, to: 2027-08-22 }
+  - { name: Herbstferien, from: 2027-10-11, to: 2027-10-24 }
+  - { name: Weihnachtsferien, from: 2027-12-20, to: 2028-01-02 }
+  - { name: Sportferien, from: 2028-02-14, to: 2028-02-27 }
+  # Easter Monday 2028-04-17 is in week 16, so weeks 16–17
+  - { name: Frühlingsferien, from: 2028-04-17, to: 2028-04-30 }
+  - { name: Sommerferien, from: 2028-07-17, to: 2028-08-20 }
+  - { name: Herbstferien, from: 2028-10-09, to: 2028-10-22 }
+
+# Full-day public holidays in the city of Zurich.
+publicHolidays:
+  - { name: Weihnachten, date: 2026-12-25 }
+  - { name: Stephanstag, date: 2026-12-26 }
+  - { name: Neujahr, date: 2027-01-01 }
+  - { name: Berchtoldstag, date: 2027-01-02 }
+  - { name: Karfreitag, date: 2027-03-26 }
+  - { name: Ostermontag, date: 2027-03-29 }
+  - { name: Tag der Arbeit, date: 2027-05-01 }
+  - { name: Auffahrt, date: 2027-05-06 }
+  - { name: Pfingstmontag, date: 2027-05-17 }
+  - { name: Bundesfeier, date: 2027-08-01 }
+  - { name: Weihnachten, date: 2027-12-25 }
+  - { name: Stephanstag, date: 2027-12-26 }
+  - { name: Neujahr, date: 2028-01-01 }
+  - { name: Berchtoldstag, date: 2028-01-02 }
+  - { name: Karfreitag, date: 2028-04-14 }
+  - { name: Ostermontag, date: 2028-04-17 }
+  - { name: Tag der Arbeit, date: 2028-05-01 }
+  - { name: Auffahrt, date: 2028-05-25 }
+  - { name: Pfingstmontag, date: 2028-06-05 }
+  - { name: Bundesfeier, date: 2028-08-01 }
+  - { name: Weihnachten, date: 2028-12-25 }
+  - { name: Stephanstag, date: 2028-12-26 }
