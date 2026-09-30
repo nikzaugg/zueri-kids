@@ -155,3 +155,5 @@ fieldset { border: 1px solid var(--line); border-radius: var(--r); padding: 12px
 .page-title { font-family: var(--f-display); font-size: clamp(26px, 7vw, 36px); line-height: 1.1; margin: 8px 0 4px; text-wrap: balance; }
 .backlink { color: var(--accent); font-weight: 700; text-decoration: none; }
 
+/* Only day navigation stays pinned; view switches and filters scroll away (small phones). */
+.toolbar { display: grid; gap: 10px; padding-block: 2px 8px; }
