@@ -1,5 +1,4 @@
 import { Fragment } from "preact";
-import { de } from "../i18n/de";
 import { byVenue } from "../lib/grouping";
 import { itemKey, type DayItem } from "../lib/model";
 import { AXIS_END, AXIS_HOURS, AXIS_START, axisPercent, barStyle } from "../lib/timeline";
@@ -37,7 +36,7 @@ export function TimelineView(p: ViewProps) {
   const rows = (items: DayItem[]) => (
     <div class="tl-rows">
       <div class="tl-grid" aria-hidden="true">{AXIS_HOURS.map((h) => <span key={h} />)}</div>
-      {showNow && <div class="nowline" data-label={de.now} style={{ left: `${axisPercent(p.now.minutes)}%` }} />}
+      {showNow && <div class="nowline" style={{ left: `${axisPercent(p.now.minutes)}%` }} />}
       {items.map((item) => <Row key={itemKey(item)} item={item} p={p} />)}
     </div>
   );

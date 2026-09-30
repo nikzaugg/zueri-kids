@@ -50,7 +50,7 @@ https://claude.ai/artifact/6Qa7n7Rz3PRmAinraTL9My
   each occurrence is one row with its time and title above a bar spanning
   its start to end on that axis, coloured by category. Occurrences of kind
   `open` have a striped bar; a legend explains both. When showing today, a
-  vertical "jetzt" line marks the current time. Rows are sorted by start.
+  vertical red line (no label) marks the current time. Rows are sorted by start.
 - **REQ-WEB-018 (grouping):** A switch "Nach Zeit" (default) / "Nach Ort"
   applies to all three views. "Nach Ort" shows one section per venue, headed
   by the venue name, its Kreis, the number of offers and a ★ toggle for

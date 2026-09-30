@@ -57,7 +57,6 @@ export const de = {
   notices: { schoolHoliday: "Schulferien – viele Angebote pausieren", publicHoliday: (name: string) => `Feiertag: ${name}` },
   stale: "evtl. veraltet",
   legend: { session: "Termin mit fixer Zeit", open: "Offen – kommen und gehen" },
-  now: "jetzt",
   offers: (n: number) => plural(n, "Angebot", "Angebote"),
   star: { add: "Zu Meine Orte hinzufügen", remove: "Aus Meine Orte entfernen" },
   loading: "Lade Angebote …",
